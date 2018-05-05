@@ -3,7 +3,7 @@
         <li v-for="file in files"
             :class="fileClass(file)"
             @click="handleClick(file)">
-            <img class="picture-box-img" :height="height" :src="getFilePath(filePath)" @click="handlePreview(file)"/>
+            <img class="picture-box-img" :height="height" :src="getFilePath(file)" @click="handlePreview(file)"/>
             <Icon
                     type="error"
                     class="picture-uploader-remove-button"

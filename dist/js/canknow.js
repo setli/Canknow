@@ -45400,7 +45400,7 @@ if (typeof window !== 'undefined' && window.Vue) {
 }
 
 var API = _extends({}, components, {
-    version: '5.0.0',
+    version: '5.0.1',
     locale: _index2.default.use,
     i18n: _index2.default.i18n,
     libs: _lib2.default,
@@ -60306,8 +60306,8 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__babel_loader_node_modules_vue_loader_13_7_1_vue_loader_lib_selector_type_script_index_0_PictureUploadList_vue__ = __webpack_require__(137);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__babel_loader_node_modules_vue_loader_13_7_1_vue_loader_lib_selector_type_script_index_0_PictureUploadList_vue___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_0__babel_loader_node_modules_vue_loader_13_7_1_vue_loader_lib_selector_type_script_index_0_PictureUploadList_vue__);
 /* harmony namespace reexport (unknown) */ for(var __WEBPACK_IMPORT_KEY__ in __WEBPACK_IMPORTED_MODULE_0__babel_loader_node_modules_vue_loader_13_7_1_vue_loader_lib_selector_type_script_index_0_PictureUploadList_vue__) if(__WEBPACK_IMPORT_KEY__ !== 'default') (function(key) { __webpack_require__.d(__webpack_exports__, key, function() { return __WEBPACK_IMPORTED_MODULE_0__babel_loader_node_modules_vue_loader_13_7_1_vue_loader_lib_selector_type_script_index_0_PictureUploadList_vue__[key]; }) }(__WEBPACK_IMPORT_KEY__));
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__babel_loader_node_modules_vue_loader_13_7_1_vue_loader_lib_template_compiler_index_id_data_v_74bb83ad_hasScoped_false_buble_transforms_node_modules_vue_loader_13_7_1_vue_loader_lib_selector_type_template_index_0_PictureUploadList_vue__ = __webpack_require__(522);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__babel_loader_node_modules_vue_loader_13_7_1_vue_loader_lib_template_compiler_index_id_data_v_74bb83ad_hasScoped_false_buble_transforms_node_modules_vue_loader_13_7_1_vue_loader_lib_selector_type_template_index_0_PictureUploadList_vue___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_1__babel_loader_node_modules_vue_loader_13_7_1_vue_loader_lib_template_compiler_index_id_data_v_74bb83ad_hasScoped_false_buble_transforms_node_modules_vue_loader_13_7_1_vue_loader_lib_selector_type_template_index_0_PictureUploadList_vue__);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__babel_loader_node_modules_vue_loader_13_7_1_vue_loader_lib_template_compiler_index_id_data_v_0fae7a68_hasScoped_false_buble_transforms_node_modules_vue_loader_13_7_1_vue_loader_lib_selector_type_template_index_0_PictureUploadList_vue__ = __webpack_require__(522);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__babel_loader_node_modules_vue_loader_13_7_1_vue_loader_lib_template_compiler_index_id_data_v_0fae7a68_hasScoped_false_buble_transforms_node_modules_vue_loader_13_7_1_vue_loader_lib_selector_type_template_index_0_PictureUploadList_vue___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_1__babel_loader_node_modules_vue_loader_13_7_1_vue_loader_lib_template_compiler_index_id_data_v_0fae7a68_hasScoped_false_buble_transforms_node_modules_vue_loader_13_7_1_vue_loader_lib_selector_type_template_index_0_PictureUploadList_vue__);
 var normalizeComponent = __webpack_require__(1)
 /* script */
 
@@ -60324,7 +60324,7 @@ var __vue_scopeId__ = null
 var __vue_module_identifier__ = null
 var Component = normalizeComponent(
   __WEBPACK_IMPORTED_MODULE_0__babel_loader_node_modules_vue_loader_13_7_1_vue_loader_lib_selector_type_script_index_0_PictureUploadList_vue___default.a,
-  __WEBPACK_IMPORTED_MODULE_1__babel_loader_node_modules_vue_loader_13_7_1_vue_loader_lib_template_compiler_index_id_data_v_74bb83ad_hasScoped_false_buble_transforms_node_modules_vue_loader_13_7_1_vue_loader_lib_selector_type_template_index_0_PictureUploadList_vue___default.a,
+  __WEBPACK_IMPORTED_MODULE_1__babel_loader_node_modules_vue_loader_13_7_1_vue_loader_lib_template_compiler_index_id_data_v_0fae7a68_hasScoped_false_buble_transforms_node_modules_vue_loader_13_7_1_vue_loader_lib_selector_type_template_index_0_PictureUploadList_vue___default.a,
   __vue_template_functional__,
   __vue_styles__,
   __vue_scopeId__,
@@ -60348,7 +60348,7 @@ var render = function render() {
   var _vm = this;var _h = _vm.$createElement;var _c = _vm._self._c || _h;return _c('ul', { staticClass: "picture-uploader-list" }, [_vm._l(_vm.files, function (file) {
     return _c('li', { class: _vm.fileClass(file), on: { "click": function click($event) {
           _vm.handleClick(file);
-        } } }, [_c('img', { staticClass: "picture-box-img", attrs: { "height": _vm.height, "src": _vm.getFilePath(_vm.filePath) }, on: { "click": function click($event) {
+        } } }, [_c('img', { staticClass: "picture-box-img", attrs: { "height": _vm.height, "src": _vm.getFilePath(file) }, on: { "click": function click($event) {
           _vm.handlePreview(file);
         } } }), _vm._v(" "), _c('Icon', { directives: [{ name: "show", rawName: "v-show", value: file.status === 'finished', expression: "file.status === 'finished'" }], staticClass: "picture-uploader-remove-button", attrs: { "type": "error" }, nativeOn: { "click": function click($event) {
           _vm.handleRemove(file);

@@ -3,7 +3,7 @@
         <li v-for="file in files"
             :class="fileClass(file)"
             @click="handleClick(file)">
-            <img class="picture-box-img" :height="height" :src="file.filePath?(baseUrl+file.filePath):defaultPicture" @click="handlePreview(file)"/>
+            <img class="picture-box-img" :height="height" :src="getFilePath(filePath)" @click="handlePreview(file)"/>
             <Icon
                     type="error"
                     class="picture-uploader-remove-button"
@@ -51,6 +51,15 @@
             };
         },
         methods: {
+            getFilePath (file) {
+                if (!file.filePath) {
+                    return this.defaultPicture;
+                }
+                if (file.filePath.includes('//')) {
+                    return file.filePath;
+                }
+                return this.baseUrl+file.filePath;
+            },
             fileClass (file) {
                 return [
                     `picture-box`,

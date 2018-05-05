@@ -1,0 +1,53 @@
+@import "./../../variables";
+@import "./../../mixins/user-select";
+
+.page-footer-wrap{
+
+}
+.page-footer{
+  padding: $space2 $content-padding;
+  p{
+    text-align: center;
+    font-size: $font-size;
+    &:last-child{
+      margin-bottom:0;
+    }
+  }
+  .copyright{
+    color: $property-color;
+    @include user-select-none;
+  }
+  .about-us{
+    font-weight: bold;
+    color: $property-color;
+    @include user-select-none;
+  }
+  .copyright-logo-wrap{
+    text-align: center;
+    .copyright-logo{
+      max-width: 100px;
+    }
+  }
+  .statement{
+    color: #ccc;
+    width: 80%;
+    margin: 0 auto;
+    padding: $content-padding;
+    border: $border-width solid $border-color;
+    border-radius: $content-padding;
+    text-align: center;
+    font-size: $font-size;
+    font-weight: bold;
+    cursor: pointer;
+    @include user-select-none;
+  }
+  &.light{
+    background: transparent;
+    .copyright{
+      color:$sub-color;
+    }
+    .about-us{
+      color:$sub-color;
+    }
+  }
+}

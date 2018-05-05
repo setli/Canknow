@@ -1,0 +1,126 @@
+@keyframes message-show {
+  0%  {
+    visibility: hidden;
+    opacity: 0;
+  }
+  100% {
+    visibility: visible;
+    opacity: 1;
+  }
+}
+@keyframes message-hide {
+  0% {
+    visibility: visible;
+    opacity: 1;
+  }
+  100% {
+    visibility: hidden;
+    opacity: 0;
+  }
+}
+@keyframes message-loading{
+  0% {
+    @include transform(rotate(0deg));
+  }
+  100% {
+    @include transform(rotate(360deg));
+  }
+}
+.message{
+  border:$border-width solid #eee;
+  position: fixed;
+  left: 50%;
+  z-index: $zindex-message;
+  background-color: #fff;
+  top:30%;
+  width: 30rem;
+  margin-left:-15rem;
+  border-radius: $space;
+  overflow: hidden;
+  &.show{
+    visibility: visible;
+    opacity: 1;
+    animation: message-show 1s;
+  }
+  &.hide{
+    visibility: hidden;
+    opacity: 0;
+    animation: message-hide 1s;
+  }
+  &.info{
+    .message-icon{
+      color:$info-color !important;
+    }
+  }
+  &.success{
+    .message-icon{
+      color:$success-color !important;
+    }
+  }
+  &.warning{
+    .message-icon{
+      color:$warning-color !important;
+    }
+  }
+  &.error{
+    .message-icon{
+      color:$error-color !important;
+    }
+  }
+  &.loading{
+  }
+  .message-body{
+    padding: $content-padding;
+    .message-icon{
+      display: block;
+      font-size: $component-size-large;
+      text-align: center;
+      color: $icon-color;
+      width:$component-size-large;
+      height:$component-size-large;
+      line-height: 1;
+      border-radius: 100%;
+      margin:0 auto $component-span auto;
+    }
+    .message-title{
+      margin: 0 0 $component-span 0;
+      font-weight: bold;
+      font-size: 1.6rem;
+      display: block;
+      color:$title-color;
+      @include user-select-none;
+      text-align:center;
+    }
+    .message-content{
+      color:$content-color;
+      @include user-select-none;
+      overflow-wrap: break-word;
+      text-align:center;
+      &:last-child{
+        margin-bottom: 0;
+      }
+    }
+  }
+  .message-footer{
+    padding:0;
+    border-top:$border-width solid #eee;
+    .text-button{
+      display: block;
+      background: transparent;
+      border:transparent;
+      color:$primary-color;
+    }
+  }
+}
+
+@media (max-width: $sm) {
+  .message {
+    width: 80%;
+    margin-left: -40%;
+    .message-footer {
+      .text-button {
+        color: $dark;
+      }
+    }
+  }
+}

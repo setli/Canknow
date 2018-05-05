@@ -1,0 +1,138 @@
+.steps{
+  @include horizional-flex-align-center;
+  .step-item{
+    @include horizional-flex;
+    &:not(:last-child){
+      @include flex-adapter;
+    }
+    position: relative;
+    &:not(:last-child):before{
+      content:"";
+      display: block;
+      position: absolute;
+      height: 0.1rem;
+      background: #eee;
+      width: calc( 100% - 1rem);
+      margin-top: $component-span
+    }
+    .step-header{
+      background: #fff;
+      position: relative;
+      .step-header-inner{
+        border: $border-width solid rgba(0,0,0,.25);
+        width: $component-size-small;
+        height: $component-size-small;
+        line-height:$component-size-small;
+        text-align: center;
+        border-radius:$component-size-small;
+        font-size: $font-size;
+        margin-right: $component-span;
+        @include transition(background-color .3s ease,border-color .3s ease);
+        transition: background-color .3s ease,border-color .3s ease;
+        .step-header-icon{
+
+        }
+      }
+    }
+    .step-main{
+      position: relative;
+      background: #fff;
+      .step-title{
+        font-size: $font-size;
+        line-height: 26px;
+        color: rgba(0,0,0,.65);
+        font-weight: 700;
+        background-color: #fff;
+        display: inline-block;
+        padding-right: $content-padding;
+        margin: 0 0 0.5rem 0;
+      }
+      .step-content{
+        color: rgba(0,0,0,.65);
+        font-size: $font-size;
+      }
+    }
+    &.finish{
+      &:before{
+        background: $primary-color;
+      }
+      .step-header{
+        .step-header-inner{
+          background-color: #fff;
+          border-color: $primary-color;
+          color: $primary-color;
+          .step-header-icon{
+            color: $primary-color;
+          }
+        }
+      }
+      .step-main{
+        .step-title{
+          color: rgba(0,0,0,.43);
+        }
+        .step-description{
+          color: rgba(0,0,0,.43);
+        }
+      }
+    }
+    &.error{
+      .step-header{
+        .step-header-inner{
+          border:none;
+          font-size: $component-size-small;
+          color:$error-color;
+          .step-header-icon{
+            color: #fff;
+          }
+        }
+      }
+      .step-main{
+        .step-title{
+          color: rgba(0,0,0,.65);
+        }
+        .step-description{
+          color: rgba(0,0,0,.65);
+        }
+      }
+    }
+    &.process{
+      .step-header{
+        .step-header-inner{
+          border-color: $primary-color;
+          background-color:$primary-color;
+          color: #fff;
+          .step-header-icon{
+            color: #fff;
+          }
+        }
+      }
+      .step-main{
+        .step-title{
+          color: rgba(0,0,0,.65);
+        }
+        .step-description{
+          color: rgba(0,0,0,.65);
+        }
+      }
+    }
+    &.wait{
+      .step-header{
+        .step-header-inner{
+          border-color: rgba(0,0,0,.25);
+          background-color: #fff;
+          .step-header-icon{
+            color: rgba(0,0,0,.25);
+          }
+        }
+      }
+      .step-main{
+        .step-title{
+          color: rgba(0,0,0,.43);
+        }
+        .step-description{
+          color: rgba(0,0,0,.43);
+        }
+      }
+    }
+  }
+}

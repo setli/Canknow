@@ -1,0 +1,23 @@
+.check-status-label{
+  height: $component-size;
+  line-height: $component-size;
+  display:inline-block;
+  .check-status{
+    display:inline-block;
+    width:$component-size-small;
+    height:$component-size-small;
+    vertical-align:middle;
+    background-image:url("#{$resourceRoot}/image/check/icon-unchecked.png");
+    background-size:100% 100%;
+  }
+  &.checked{
+    .check-status{
+      background-image:url("#{$resourceRoot}/image/check/icon-checked.png");
+    }
+  }
+  .note{
+    display:inline-block;
+    vertical-align:middle;
+    @include user-select-none;
+  }
+}

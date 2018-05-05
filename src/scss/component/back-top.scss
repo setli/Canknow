@@ -1,0 +1,14 @@
+.back-top{
+  background-color:rgba(255,255,255,0.9);
+  box-shadow: $shadow-base;
+  width:$component-size-large;
+  height: $component-size-large;
+  line-height: $component-size-large;
+  border-radius:$component-size-large;
+  text-align: center;
+  position:fixed;
+  bottom:$component-span;
+  right:$component-span;
+  z-index:$zindex-back-top;
+  cursor: pointer;
+}

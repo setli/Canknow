@@ -1,0 +1,15 @@
+.picture-blank{
+  padding: 2rem 0;
+  text-align: center;
+  .picture-blank-icon{
+    color: $icon-color;
+    display: block;
+    line-height: 1;
+    font-size: $component-size-huger;
+  }
+  .picture-blank-text{
+    color:$property-color;
+    display: block;
+    @include user-select-none;
+  }
+}

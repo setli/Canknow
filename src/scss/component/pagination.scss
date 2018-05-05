@@ -1,0 +1,74 @@
+.pagination{
+  .pagination-list{
+    display: inline-block;
+    @include list-unstyled;
+    margin-bottom: 0;
+    vertical-align: middle;
+    @include user-select-none;
+    li{
+      display:inline-block;
+      margin-right: $component-span;
+      vertical-align: middle;
+      @include user-select-none;
+      a{
+        display:block;
+        width:$component-size;
+        height:$component-size;
+        text-align:center;
+        line-height:$component-size -(2*$border-width);
+        border:$border-width solid rgba(0,0,0,0.1);
+        border-radius:100%;
+        font-size: $font-size;
+        cursor: pointer;
+        color: $title-color;
+        background-color:transparent;
+        @include user-select-none;
+        @include transition(0.3s);
+      }
+      &.current{
+        a,
+        a:hover,
+        a:focus,
+        a:focus{
+          z-index: 2;
+          cursor: default;
+          color: $primary-color !important;
+          border-color: $primary-color !important;
+        }
+      }
+      &:not([disabled]) > a:hover,
+      &:not([disabled]) > a:focus{
+        border:$border-width solid rgba(0,0,0,0.3);
+      }
+      &.disabled > a,
+      &.disabled > a:hover,
+      &.disabled > a:focus {
+        color:$disabled-color;
+        border-color: $disabled-color;
+        cursor: not-allowed;
+        @include user-select-none;
+      }
+    }
+  }
+  .pagination-options{
+    display: inline-block;
+    vertical-align: middle;
+    .pagination-options-sizer{
+      display: inline-block;
+      vertical-align: middle;
+    }
+    .pagination-options-elevator{
+      display: inline-block;
+      vertical-align: middle;
+    }
+  }
+}
+
+.pagination-container{
+  padding:$component-span;
+  margin-bottom:$component-span;
+  text-align:center;
+  .pagination-list{
+    margin-bottom:0;
+  }
+}

@@ -1,0 +1,140 @@
+.icon-button {
+  padding: 0;
+  background-image: none;
+  @extend .base-button;
+
+  width:$component-size;
+  height: $component-size;
+  line-height: $component-size -(2*$border-width);
+  font-size: $component-size -(2*$border-width);
+  text-align: center;
+
+  background-color: transparent;
+  border: $border-width solid transparent;
+  color:$button-color;
+
+  &.primary{
+    color:$primary-color;
+  }
+  &.success{
+    color:$success-color;
+  }
+  &.info{
+    color:$info-color;
+  }
+  &.warning{
+    color:$warning-color;
+  }
+  &.danger{
+    color:$error-color;
+  }
+
+  &.with-padding{
+    font-size: $font-size*1.5 !important;
+  }
+
+  &.small{
+    width: $component-size-small;
+    height: $component-size-small;
+    font-size: $font-size*1.5;
+    line-height: $component-size-small -(2*$border-width);
+  }
+  &.large{
+    width: $component-size-large;
+    height: $component-size-large;
+    font-size:$component-size-large -(2*$border-width);
+    line-height: $component-size-large -(2*$border-width);
+  }
+
+  &.dark{
+    color:$dark;
+  }
+  &.gray{
+    color:$gray;
+  }
+  &.light{
+    color: $light;
+  }
+
+  &.border{
+    font-size:$font-size*1.5;
+    &.light-transparent{
+      color:$light-transparent;
+      border-color:$light-transparent;
+    }
+    &.gray-transparent{
+      color:$gray-transparent;
+      border-color:$gray-transparent;
+    }
+    &.dark-transparent{
+      color:$dark-transparent;
+      border-color:$dark-transparent;
+    }
+    &.dark{
+      color:$dark;
+      border-color:$dark;
+    }
+    &.gray{
+      color:$gray;
+      border-color:$gray;
+    }
+    &.light{
+      color: $light;
+      border-color: $light;
+    }
+    &.primary{
+      color:$primary-color;
+      border-color:$primary-color;
+    }
+    &.success{
+      color:$success-color;
+      border-color:$success-color;
+    }
+    &.info{
+      color:$info-color;
+      border-color:$info-color;
+    }
+    &.warning{
+      color:$warning-color;
+      border-color:$warning-color;
+    }
+    &.danger{
+      color:$error-color;
+      border-color:$error-color;
+    }
+  }
+
+  &.fill{
+    font-size:$font-size*1.5;
+    color:#fff;
+    &.dark{
+      background-color:$dark;
+    }
+    &.gray{
+      background-color:$gray;
+    }
+    &.light{
+      color: $dark;
+      background-color: $light;
+    }
+    &.primary{
+      background-color:$primary-color;
+    }
+    &.success{
+      background-color:$success-color;
+    }
+    &.info{
+      background-color:$info-color;
+    }
+    &.warning{
+      background-color:$warning-color;
+    }
+    &.danger{
+      background-color:$error-color;
+    }
+  }
+
+  &.circle {
+    border-radius: 100%;
+  }
+}

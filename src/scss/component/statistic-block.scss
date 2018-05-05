@@ -1,0 +1,33 @@
+.statistic-block {
+  margin-top: 2rem;
+  @include clearfix;
+  .statistic-item {
+    width: 50%;
+    text-align: center;
+    padding: $content-padding 0;
+    float: left;
+    display: block;
+    cursor: pointer;
+
+    .count {
+      font-size: 2rem;
+      margin-bottom:$component-span;
+      display: block;
+      font-weight: normal;
+      cursor: pointer;
+      color: $title-color;
+
+      &.price {
+        color: $price-color;
+      }
+    }
+
+    .name {
+      font-size: $font-size;
+      color: $sub-color;
+      display: block;
+      cursor: pointer;
+      @include user-select-none;
+    }
+  }
+}

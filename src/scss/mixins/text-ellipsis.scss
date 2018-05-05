@@ -1,0 +1,12 @@
+@mixin text-ellipsis {
+  text-overflow: ellipsis;
+  white-space:nowrap;
+  overflow:hidden;
+}
+
+@mixin multi-text-ellipsis($lineCount){
+  white-space:normal;
+  -webkit-line-clamp:$lineCount;
+  display:-webkit-box;
+  -webkit-box-orient: vertical;
+}

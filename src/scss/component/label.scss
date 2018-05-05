@@ -1,0 +1,27 @@
+.label {
+  display: inline-block;
+  line-height: 1;
+  font-size: 80%;
+  padding: 0.3rem 0.5rem;
+  background-color: $sub-color;
+  color: #fff;
+  vertical-align: middle;
+  border-radius: $border-radius;
+  font-weight:bold;
+  text-shadow: $border-width $border-width $border-width $content-color;
+  &+.label{
+    margin-left: $text-span;
+  }
+  &.success {
+    background-color: $success-color;
+  }
+  &.danger {
+    background-color: $error-color;
+  }
+  &.info {
+    background-color: $info-color;
+  }
+  &.warning {
+    background-color: $warning-color;
+  }
+}

@@ -1,0 +1,51 @@
+.mobile-page-header{
+  @include horizional-flex-align-center;
+  padding: 0 $content-padding;
+  height: $component-size + $content-padding;
+  background-color: $background-color;
+  .page-title{
+    display: block;
+    height: $component-size + $content-padding;
+    line-height: $component-size + $content-padding;
+    @include flex-adapter;
+    text-align: center;
+    cursor: pointer;
+    @include user-select-none;
+    color:$title-color;
+  }
+  .page-title-logo-wrap{
+    @include flex-adapter;
+    text-align: center;
+    img{
+      height: $component-size-small;
+    }
+  }
+  &.light{
+    .page-title{
+      color:$title-color;
+    }
+    .icon-button{
+      color:$content-color;
+      &.stock{
+        border-color:$content-color;
+      }
+    }
+  }
+  &.dark{
+    .page-title{
+      color:#fff;
+    }
+  }
+  .back-button{
+
+  }
+  .page-logo{
+
+  }
+  .avatar{
+
+  }
+  .setting-button{
+
+  }
+}

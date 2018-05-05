@@ -1,0 +1,36 @@
+.info-list{
+  @include list-unstyled;
+  .info-item{
+    margin-bottom: 0;
+    border-bottom: $border-width solid #eee;
+    @include horizional-flex;
+    padding: 0 $content-padding;
+    .info-item-label{
+      font-size: $font-size;
+      text-overflow: ellipsis;
+      white-space:nowrap;
+      overflow:hidden;
+      color:$sub-color;
+      height: $component-size-large;
+      line-height: $component-size-large;
+      @include user-select-none;
+    }
+    .info-item-content{
+      display: block;
+      @include flex-adapter;
+      font-size: $font-size;
+      color:$content-color;
+      line-height: $component-size-large;
+      .input-wrapper{
+        input{
+          border-color:transparent;
+        }
+      }
+    }
+  }
+  &.justify-end{
+    .info-item-content{
+      text-align: right;
+    }
+  }
+}

@@ -1,0 +1,31 @@
+.additional-data-block {
+  background-color: #fff;
+  padding: $content-padding;
+
+  .additional-data-list {
+    @include horizional-flex-align-center;
+    list-style-type: none;
+    padding-left: 0;
+    margin-bottom: 0;
+
+    li {
+      @include flex-adapter;
+      text-align: center;
+    }
+
+    .title {
+      font-weight: normal;
+      font-size: $font-size;
+      color: $sub-color;
+      display: block;
+      margin-bottom: $icon-text-span;
+    }
+
+    .value {
+      display: block;
+      font-weight: normal;
+      font-size: 1.5*$font-size;
+      color: $content-color;
+    }
+  }
+}

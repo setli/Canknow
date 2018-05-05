@@ -1,0 +1,62 @@
+.grid-navigation {
+  .menu {
+    height: auto;
+    line-height: 1;
+    &.menu-list{
+      @include list-unstyled;
+      padding-left:0;
+      background-color:#fff;
+      @include clearfix;
+      .menu-item{
+        float: left;
+        color:$input-color;
+        cursor:pointer;
+        width: 25%;
+        padding: 0;
+        .menu-item-title-box{
+          text-align: center;
+          padding: $content-padding;
+          cursor:pointer;
+          .menu-item-icon{
+            display:block;
+            width:$component-size-small;
+            height:$component-size-small;
+            font-size: $component-size-small;
+            line-height:$component-size-small;
+            margin: 0 auto $component-span auto;
+            color:$important-color;
+            cursor:pointer;
+            text-align:center;
+          }
+          .menu-item-title{
+            display:block;
+            margin:0 auto $component-span auto;
+            color:$icon-color;
+            font-size: $font-size;
+            text-align: center;
+          }
+        }
+      }
+    }
+  }
+  &.splited{
+    .menu-item:not(:last-child){
+      border-right: $border-width solid $border-color;
+    }
+  }
+  &.span-2{
+    .menu-item{
+      width: 50% !important;
+    }
+  }
+  &.span-3{
+    .menu-item{
+      width: calc(100%/3) !important;
+    }
+  }
+  &.span-4{
+    .menu-item{
+      width: 25% !important;
+    }
+  }
+}

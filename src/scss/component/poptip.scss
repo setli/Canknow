@@ -1,0 +1,144 @@
+$poptip-arrow: "poptip-arrow";
+$poptip-max-width: 250px;
+$poptip-arrow-width: 5px;
+$poptip-arrow-outer-width: ($poptip-arrow-width + 1);
+$poptip-distance: $poptip-arrow-width - 1 + 4;
+$poptip-arrow-color: hsla(0,0%,85%,.5);
+
+.poptip {
+  display: inline-block;
+  &-rel{
+    display: inline-block;
+    position: relative;
+  }
+
+  &-title {
+    margin: 0;
+    padding: $text-padding $content-padding;
+    position: relative;
+    background-color: $secondary-color;
+    &-inner{
+      color: $title-color;
+      text-align: center;
+      font-size: $font-size;
+      @include user-select-none;
+    }
+  }
+
+  &-body{
+    padding: $text-padding $content-padding;
+
+    &-content{
+      overflow: auto;
+
+      &-inner{
+        color: $content-color;
+      }
+    }
+  }
+
+  &-inner{
+    width: 100%;
+    background-color: #fff;
+    background-clip: padding-box;
+    border-radius: $border-radius;
+    white-space: nowrap;
+  }
+
+  &-content{
+    border: $border-width solid $split-color;
+    border-radius: $module-radius;
+    overflow: hidden;
+  }
+  &-popper{
+    min-width: 150px;
+    font-size: $font-size;
+    @include popper($poptip-arrow, $poptip-arrow-width, $poptip-distance, $poptip-arrow-color);
+
+    &[x-placement^="top"] .poptip-arrow:after {
+      content: " ";
+      bottom: 1px;
+      margin-left: -$poptip-arrow-width;
+      border-bottom-width: 0;
+      border-top-color: #fff;
+    }
+
+    &[x-placement^="right"] .poptip-arrow:after {
+      content: " ";
+      left: 1px;
+      bottom: -$poptip-arrow-width;
+      border-left-width: 0;
+      border-right-color: #fff;
+    }
+
+    &[x-placement^="bottom"] .poptip-arrow:after {
+      content: " ";
+      top: 1px;
+      margin-left: -$poptip-arrow-width;
+      border-top-width: 0;
+      border-bottom-color: #fff;
+    }
+
+    &[x-placement^="left"] .poptip-arrow:after {
+      content: " ";
+      right: 1px;
+      border-right-width: 0;
+      border-left-color: #fff;
+      bottom: -$poptip-arrow-width;
+    }
+  }
+
+  &-arrow{
+    &, &:after{
+      display: block;
+      width: 0;
+      height: 0;
+      position: absolute;
+      border-color: transparent;
+      border-style: solid;
+    }
+  }
+  &-arrow {
+    border-width: $poptip-arrow-outer-width;
+  }
+  &-arrow:after{
+    content: "";
+    border-width: $poptip-arrow-width;
+  }
+
+  &-confirm &-popper{
+    max-width: 300px;
+  }
+  &-confirm &-inner{
+    white-space: normal;
+  }
+
+  &-confirm &-body{
+    padding: $content-padding;
+    [class*="icon-"]{
+      font-size: $font-size-larger;
+      position: absolute;
+      background-color: $warning-color;
+      color:#fff;
+      border-radius: $font-size-larger;
+      width: $font-size-larger;
+      height: $font-size-larger;
+      line-height: $font-size-larger;
+    }
+    &-message{
+      padding-left: $space2;
+    }
+  }
+
+  &-confirm &-footer{
+    @include horizional-flex-align-center;
+    padding: $content-padding;
+    button {
+      @include flex-adapter;
+      display: block;
+      &:not(:last-child) {
+        margin-right: $component-span;
+      }
+    }
+  }
+}

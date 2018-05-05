@@ -1,0 +1,70 @@
+.tab-navigation{
+  overflow-x: hidden;
+  background-color: #fff;
+  .menu{
+    list-style-type:none;
+    padding-left:0;
+    height: auto;
+    line-height: 1;
+    margin-bottom:0;
+    .menu-item{
+      padding: 0;
+      text-align: center;
+      &.active{
+        .menu-item-title-box{
+          border-bottom: 2px solid $important-color;
+          .menu-item-icon,
+          .menu-item-title{
+            color:$important-color;
+          }
+        }
+      }
+      .menu-item-title-box{
+        text-align:center;
+        padding:$content-padding;
+        border-bottom: 2px solid transparent;
+        .menu-item-icon{
+          display:inline-block;
+          vertical-align: middle;
+          margin-right: $text-span;
+          color:$title-color;
+          font-size: $font-size-larger;
+          @include user-select-none;
+        }
+        .menu-item-title{
+          display:inline-block;
+          vertical-align: middle;
+          font-size:$font-size;
+          color:$sub-color;
+          @include user-select-none;
+        }
+      }
+    }
+  }
+  &.match-parent{
+    .menu{
+      @include horizional-flex-align-center;
+      .menu-item{
+        @include flex-adapter;
+      }
+    }
+  }
+  &-card{
+    .menu{
+      background: $background-color;
+      border:$border-width solid $border-color;
+      .menu-item{
+        margin-right: 0 !important;
+        &:not(:first-child) {
+          border-right: $border-width solid $border-color;
+        }
+        &.active{
+          background: #fff;
+          .menu-item-title-box{
+            border-color:transparent;
+          }
+        }
+      }
+    }
+  }
+}

@@ -1,0 +1,102 @@
+﻿.image-box{
+    overflow:hidden;
+}
+.image-circle{
+    border-radius:50%;
+}
+.image-responsive{
+    max-width:100%;
+}
+.img-wrapper img{
+    max-width:100%;
+}
+
+.adaptive-picture{
+    background-size: 100% auto;
+    background-position-y: center;
+    &.ratio{
+        img{
+            width: 100%;
+        }
+    }
+}
+
+.image-container {
+    display: inline-block;
+    position: relative;
+    vertical-align: middle;
+    max-width: 100%;
+    background-color: transparent;
+    .frame {
+        background-color: #ffffff;
+        position: relative;
+        width: 100%;
+        height: 100%;
+    }
+    img {
+        width: 100%;
+    }
+    .image-overlay {
+        position: absolute;
+        top: 0;
+        bottom: 0;
+        left: 0;
+        right: 0;
+        opacity: 0;
+        overflow: hidden;
+        font-size: $font-size;
+        line-height: 1;
+        padding: $content-padding;
+        background-color: $primary-color;
+        color: #ffffff;
+        text-align: center;
+        border-radius: inherit;
+        transition: all 0.65s ease;
+        &:before {
+            border-top: none;
+            border-bottom: none;
+            bottom: $component-span;
+            top: $component-span;
+        }
+        &:before,
+        &:after {
+            display: block;
+            position: absolute;
+            content: "";
+            border: $border-width solid rgba(255, 255, 255, 0.7);
+            top: $component-span;
+            bottom: $component-span;
+            left: $component-span;
+            right: $component-span;
+            opacity: 0;
+            border-radius: inherit;
+            @include transform(scale(1.5));
+            transition: all 0.65s ease;
+            border-left: none;
+            border-right: none;
+        }
+        &:hover {
+            opacity: 1;
+            &:before,
+            &:after {
+                opacity: 1;
+                @include transform(scale(1));
+            }
+        }
+    }
+}
+
+.image-layout{
+    position:relative;
+    img{
+        width:100%;
+    }
+    .image-layout-body{
+        position:absolute;
+        left:0;
+        top:0;
+        width:100%;
+        height:100%;
+        z-index: 1;
+    }
+}

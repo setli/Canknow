@@ -1,0 +1,70 @@
+.notify-manage{
+  position: fixed;
+  right: $component-span;
+  top: $component-span;
+  width: 30%;
+  z-index: $zindex-message;
+}
+.notify{
+  margin-bottom: $component-span;
+  padding: $content-padding;
+  box-shadow: $shadow-base;
+  position: relative;
+  @include horizional-flex-align-center;
+  background-color: #fff;
+  border-radius: $border-radius;
+  overflow: hidden;
+  .notify-close-button{
+    position: absolute;
+    right: $content-padding;
+    top: $content-padding;
+  }
+  .notify-icon-wrap{
+    display: block;
+    margin-right: $component-span;
+    .notify-icon{
+      display: block;
+      font-size: $component-size;
+      line-height: 1;
+      text-align: center;
+      color: $sub-color;
+      width: $component-size;
+      height:$component-size;
+    }
+  }
+  &.success{
+    .notify-icon{
+      color:$success-color;
+    }
+  }
+  &.warning{
+    .notify-icon{
+      color:$warning-color;
+    }
+  }
+  &.error{
+    .notify-icon{
+      color:$error-color;
+    }
+  }
+  &.info{
+    .notify-icon{
+      color:$info-color;
+    }
+  }
+  .notify-body{
+    .notify-title{
+      margin: 0 0 $component-span 0;
+      font-weight: bold;
+      font-size: $font-size-large;
+      color:$title-color;
+    }
+    .notify-content{
+      color:$content-color;
+      font-size: $font-size;
+      &:last-child{
+        margin-bottom: 0;
+      }
+    }
+  }
+}

@@ -1,0 +1,84 @@
+.document-list,
+.document-list ul{
+  margin-bottom: 0;
+  padding-left: 0;
+}
+.document-list{
+  margin-top: 0;
+  li{
+    @include list-unstyled;
+    .title{
+      padding: $content-padding;
+    }
+    a.title{
+      color: $title-color;
+      font-size: 1.4rem;
+      display: block;
+      background-color: $background-color;
+      box-shadow:$shadow-base;
+      position: relative;
+    }
+    &>h5.title{
+      margin: 0;
+      font-weight: bold;
+      font-size: 1.4rem;
+      color:#fff;
+      cursor: pointer;
+      position: relative;
+      padding: $content-padding;
+      padding-left: 4.8rem;
+      &:after{
+        content: "-";
+        display: block;
+        position: absolute;
+        left: 6px;
+        top: 50%;
+        margin-top: -$component-size-small/2;
+        width:$component-size-small;
+        height: $component-size-small;
+        line-height: $component-size-small;
+        color: $title-color;
+        border: $border-width solid $title-color;
+        border-radius: 100%;
+        text-align: center;
+      }
+    }
+    &.actived{
+      &>h5.title{
+        &:after{
+          content: "+";
+        }
+      }
+      &>a.title{
+        &:after{
+          content: ">";
+          display: block;
+          position: absolute;
+          right: $content-padding;
+          top: 50%;
+          margin-top: -$component-size-small/2;
+          width:$component-size-small;
+          height:$component-size-small;
+          line-height: $component-size-small;
+          color: $title-color;
+          border-radius: 100%;
+          text-align: center;
+        }
+      }
+    }
+  }
+  &>li{
+    h5.title{
+      background-color: $sub-color;
+      box-shadow:$shadow-base;
+      @include user-select-none;
+    }
+    ul{
+      li{
+        h5.title{
+          background-color: $property-color;
+        }
+      }
+    }
+  }
+}

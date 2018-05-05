@@ -1,0 +1,23 @@
+@media (min-width: $sm) {
+  .button-group{
+    @include horizional-flex-align-center;
+    .text-button{
+      @include flex-adapter;
+      margin-bottom: 0;
+    }
+    &.padding{
+      .text-button:not(:last-child){
+        margin-right: $component-span;
+      }
+    }
+  }
+}
+@media (max-width: $sm) {
+  .button-group.responsive{
+    .text-button:not(:first-child){
+      display: block;
+      margin-top: $component-span;
+      margin-right: 0;
+    }
+  }
+}

@@ -1,0 +1,40 @@
+.removable-label-list{
+  @include user-select-none;
+  .removable-label{
+    display: inline-block;
+    background: $background-color;
+    margin-right: $text-padding;
+    padding: 0 $content-padding;
+    height: $component-size;
+    line-height: $component-size;
+    &.border{
+      background: transparent;
+      border: $border-width solid $border-color;
+      line-height: $component-size - 2*$border-width;
+      &.small {
+        line-height: $component-size-small - 2*$border-width;
+      }
+    }
+    &.radius{
+      border-radius: $component-size;
+      &.small {
+        border-radius: $component-size-small;
+      }
+    }
+    &.small{
+      height: $component-size-small;
+      line-height: $component-size-small;
+    }
+    .removable-label-text{
+      text-align: center;
+      display: inline-block;
+      font-size:$font-size;
+      vertical-align: middle;
+    }
+    .removable-label-close-button{
+      display: inline-block;
+      vertical-align: middle;
+      color:$error-color;
+    }
+  }
+}

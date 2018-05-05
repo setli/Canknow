@@ -1,0 +1,29 @@
+.finance-account{
+  background-color: #fff;
+  padding:$content-padding;
+  @include horizional-flex;
+  .finance-acount-icon{
+    display: block;
+    width:$component-size-large;
+    height:$component-size-large;
+  }
+  .finance-account-body{
+    padding:0 $content-padding;
+    .finance-account-title{
+      font-size: $font-size;
+      margin:0 0 $component-span 0;
+    }
+    .finance-account-account{
+      font-size: 1.6rem;
+      margin:0;
+    }
+  }
+}
+.finance-account-list{
+  .finance-account-item{
+    margin-bottom:$component-span;
+    display: block;
+    background-color: #fff;
+    box-shadow: $light-shadow;
+  }
+}

@@ -1,0 +1,15 @@
+.list-group .item {
+  padding:$content-padding;
+  border: $border-width solid $border-color;
+  text-decoration: none;
+  display: block;
+  &:nth-child(n+2) {
+    border-top: none;
+  }
+  .heading {
+    color: $title-color;
+  }
+  .content {
+    color: $content-color;
+  }
+}

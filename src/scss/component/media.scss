@@ -1,0 +1,106 @@
+.media-list{
+  @include list-unstyled;
+  &.border .media{
+    border-bottom: $border-width solid $border-color;
+  }
+  &.selectable{
+    .media{
+      &:after {
+        content: "";
+        display: block;
+        background-image: url("#{$resourceRoot}/image/check/icon-unchecked.png");
+        background-size: 100% 100%;
+        width: $component-size-small;
+        height: $component-size-small;
+        right: $content-padding;
+        top: 50%;
+        margin-top:- $component-size-small/2;
+        position: absolute;
+      }
+      &.selected {
+        &:after {
+          background-image: url("#{$resourceRoot}/image/check/icon-checked.png");
+        }
+      }
+    }
+  }
+}
+.media{
+  @include horizional-flex;
+  padding: $content-padding;
+  position:relative;
+  cursor: pointer;
+  &:hover{
+    background-color: $background-color;
+  }
+  .media-box{
+    @include flex-adapter;
+    @include horizional-flex;
+    border-bottom: $border-width solid $border-color;
+  }
+  .media-status{
+    position: absolute;
+    right: $content-padding;
+    height:$component-size-small;
+    line-height: $component-size-small;
+    text-align: center;
+    top:50%;
+    margin-top: -$component-size-small/2;
+    color: $light;
+    background-color:$important-color;
+    font-size: $font-size;
+  }
+  .media-cover-box{
+    position: relative;
+    .media-cover{
+
+    }
+    .contact-status{
+      position: absolute;
+      width: $font-size;
+      height: $font-size;
+      border-radius: 50% !important;
+      right: 0;
+      bottom: 0;
+      &.online{
+        background-color: $success-color;
+      }
+      &.offline{
+        background-color: $error-color;
+      }
+    }
+  }
+  .media-body{
+    @include flex-adapter;
+    padding: 0 $content-padding;
+    .media-title{
+      display: block;
+      font-size: $font-size;
+      line-height: 1.5;
+      padding: 0;
+      margin: 0 0 $component-span 0;
+    }
+    .media-mete{
+      color: $sub-color;
+      margin-bottom: $component-span;
+      * {
+        margin-right: $text-span;
+      }
+    }
+    .media-datetime{
+      font-size: $font-size;
+      color:$property-color;
+      float: right;
+    }
+    .media-content{
+      font-size:$font-size;
+      color:$sub-color;
+    }
+  }
+  .right-button {
+    position:absolute;
+    right:$component-span;
+    top:50%;
+    transform: translateY(-50%);
+  }
+}

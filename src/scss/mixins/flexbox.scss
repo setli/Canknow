@@ -1,0 +1,22 @@
+@mixin horizional-flex-box {
+  display: -webkit-box !important;
+  -webkit-box-orient: horizontal;
+}
+@mixin horizional-flex-box-align-center{
+  @extend .horizional-flex-box;
+  -webkit-box-align: center;
+  align-items: center;
+}
+@mixin vertical-flex-box {
+  display: -webkit-box !important;
+  -webkit-box-orient: vertical !important;
+}
+
+@mixin flex-box-adapter {
+  display: block;
+  -webkit-box-flex: 1;
+}
+@mixin flex-box-adapter-block{
+  display:block;
+  @include flex-box-adapter;
+}

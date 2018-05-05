@@ -1,0 +1,227 @@
+@mixin button-variant($color, $background, $border) {
+  $active-background: darken($background, $active-color-darken);
+  $active-border: darken($border, $active-color-darken);
+  $hover-background: lighten($background, $hover-color-lighten);
+  $hover-border: lighten($border, $hover-color-lighten);
+
+  color: $color;
+  background-color: $background;
+  border-color: $border;
+
+  &.primary.light-shadow{
+    background: linear-gradient(-45deg, #32b6ff, #4276ff);
+  }
+
+  &:hover{
+    background-color: $hover-background;
+    border-color: $hover-border;
+    color: $color;
+  }
+  &:active{
+    background-color: $active-background;
+    border-color: $active-border;
+    color: $color;
+  }
+}
+
+@mixin ghost-button-variant($color) {
+  color: $color;
+  border-color:transparent;
+  background-color: transparent;
+}
+
+@mixin border-button-variant($color,$border-color) {
+  color: $color;
+  border-color:$border-color;
+  background-color: transparent;
+  &:active{
+    background-color: transparent;
+    color: $color;
+  }
+}
+
+.text-button{
+  @extend .text-base-button;
+  padding: 0 $content-padding;
+  text-align: center;
+  font-size: $font-size;
+  @include text-ellipsis;
+  transition: background-color color $transition-time;
+
+  &.long{
+    padding: 0 $content-padding*2;
+  }
+
+  &.longer{
+    padding: 0 $content-padding*3;
+  }
+
+  &:hover{
+    outline:none;
+  }
+  &:focus{
+    outline:none;
+  }
+  &:active{
+    outline:none;
+  }
+
+  @include button-variant($content-color,$button-color, $border-color);
+
+  &.primary {
+    @include button-variant($light,$primary-color,$primary-color);
+  }
+  &.secondary{
+    @include button-variant($light,$secondary-color,$secondary-color);
+  }
+  &.info {
+    @include button-variant($light,$info-color,$info-color);
+  }
+  &.success {
+    @include button-variant($light,$success-color,$success-color);
+  }
+  &.warning {
+    @include button-variant($light,$warning-color,$warning-color);
+  }
+  &.danger {
+    @include button-variant($light,$error-color,$error-color);
+  }
+  &.colored{
+    color: $light;
+  }
+
+  &.light{
+    @include button-variant( $dark,$light,$light);
+  }
+  &.dark{
+    @include button-variant( $light,$dark,$dark);
+  }
+
+  &.no-style{
+    padding:0;
+    background-color: transparent;
+    border-color: transparent;
+  }
+
+  &.ghost{
+    @include ghost-button-variant( $content-color);
+    &.primary {
+      @include ghost-button-variant($primary-color);
+    }
+    &.secondary{
+      @include ghost-button-variant($secondary-color);
+    }
+    &.info {
+      @include ghost-button-variant($info-color);
+    }
+    &.success {
+      @include ghost-button-variant($success-color);
+    }
+    &.warning {
+      @include ghost-button-variant($warning-color);
+    }
+    &.danger {
+      @include ghost-button-variant($error-color);
+    }
+    &.light{
+      @include ghost-button-variant( $dark);
+    }
+    &.dark{
+      @include ghost-button-variant( $light);
+    }
+  }
+
+  &.button-loading{
+    &:before{
+      content: '';
+      background-image: url("#{$resourceRoot}/image/loading/loading.svg");
+      background-size: 100% 100%;
+      animation: load-loop 1s linear infinite;
+      width: $component-size-small;
+      height: $component-size-small;
+      line-height: $component-size-small;
+      font-size: $component-size-small;
+      display: inline-block;
+      margin-left: $component-span;
+      vertical-align: middle;
+    }
+  }
+
+  &.sync-button{
+    .sync-icon{
+      display: inline-block;
+    }
+    &.synching{
+      .sync-icon{
+        animation: load-loop 1s linear infinite;
+      }
+    }
+  }
+
+  &.border {
+    @include border-button-variant($dark,$gray);
+    &.light{
+      @include border-button-variant($light,$light);
+    }
+    &.dark{
+      @include border-button-variant($dark,$dark);
+    }
+    &.primary {
+      @include border-button-variant($primary-color,$primary-color);
+    }
+    &.secondary{
+      @include border-button-variant($secondary-color,$secondary-color);
+    }
+    &.info {
+      @include border-button-variant($info-color,$info-color);
+    }
+    &.success {
+      @include border-button-variant($success-color,$success-color);
+    }
+    &.warning {
+      @include border-button-variant($warning-color,$warning-color);
+    }
+    &.danger {
+      @include border-button-variant($error-color,$error-color);
+    }
+  }
+
+  &.small-radius{
+    border-radius:$border-radius;
+  }
+  &.radius{
+    border-radius:$component-size;
+  }
+
+  &.block {
+    display: block;
+    width: 100%;
+  }
+
+  [class*="icon-"]{
+    margin-left: $icon-text-span;
+    margin-right: $icon-text-span;
+  }
+  .button-label{
+    cursor: pointer;
+  }
+
+  &.circle{
+    border-radius:$component-size;
+  }
+
+  &.small{
+    height: $component-size-small;
+    line-height:$component-size-small -(2*$border-width);
+    &.circle{
+      border-radius:$component-size-small;
+    }
+  }
+  &.large{
+    height: $component-size-large;
+    line-height:$component-size-large -(2*$border-width);
+    &.circle{
+      border-radius:$component-size-large;
+    }
+  }
+}

@@ -1,0 +1,43 @@
+$colors:(blue #03a9f4)
+        (blueLight #eff4ff)
+        (blueDark #2b5797)
+        (green rgb(87, 206, 115))
+        (greenLight #99b433)
+        (greenDark #1e7145)
+        (red #e51400)
+        (yellow #ffc40d)
+        (orange #e3a21a)
+        (orangeDark #da532c)
+        (pink #e671b8)
+        (pinkDark #7e3878)
+        (purple #7b4f9d)
+        (darken #1d1d1d)
+        (white #ffffff)
+        (lighten #da532c)
+        (grayDark #525252)
+        (alizarin rgb(231, 76, 60));
+
+@each $color in $colors{
+  $class: nth($color,1);
+  $colorValue: nth($color,2);
+  .fg-color-#{$class}{
+    color: #{$colorValue} !important;
+  }
+  .bg-color-#{$class}{
+    background-color: #{$colorValue} !important;
+  }
+  .border-color-#{$class}{
+    border-color: #{$colorValue} !important;
+  }
+  .outline-color-#{$class}{
+    outline-color: #{$colorValue} !important;
+  }
+}
+
+[class*=border-color] {
+  border: 2px solid;
+}
+
+*:hover[class=outline-color] {
+  outline: 3px solid;
+}

@@ -1,0 +1,62 @@
+.editable-tree-list{
+  @include list-unstyled;
+  .editable-tree-item{
+    ul{
+      padding-left: $component-size-large;
+    }
+    .editable-tree-item-header{
+      @include horizional-flex-align-center;
+      background-color:$background-color;
+      padding: 0 $content-padding;
+      border-bottom: $border-width solid #fff;
+      height: $component-size;
+      line-height: $component-size;
+      .editable-tree-item-title{
+        padding: $text-span $content-padding;
+        @include horizional-flex-align-center;
+        display:block;
+        font-size:$font-size;
+        @include flex-adapter;
+      }
+      .toggle-handler{
+        display:block;
+        margin-right:$text-span;
+        color:$button-color;
+        border-color:$button-color;
+      }
+      .sort-handler{
+        color:#fff;
+        width:$component-size;
+        height:$component-size;
+        line-height:$component-size - 2*$border-width;
+        border:$border-width solid transparent;
+        text-align:center;
+        display:block;
+        color:rgba(0, 0, 0, 0.3);
+        font-size:$font-size-large;
+        cursor:pointer;
+      }
+    }
+    &.selected{
+      &>.editable-tree-item-header{
+        background-color:$primary-color;
+        .editable-tree-item-title{
+          color:#fff;
+        }
+        .icon-button{
+          border-color: #fff;
+          color: #fff;
+        }
+        .sort-handler{
+          color:rgba(255, 255, 255, 0.8);
+        }
+      }
+    }
+  }
+  ul{
+    @include list-unstyled;
+    &.closed{
+      display:none;
+    }
+  }
+}

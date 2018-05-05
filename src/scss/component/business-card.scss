@@ -1,0 +1,43 @@
+.business-card{
+  border:$border-width solid $border-color;
+  position: relative;
+  text-align: center;
+  .business-card-profile{
+    position: relative;
+    display:inline-block;
+    top:-1.6rem;
+    background: #fff;
+    padding: 0 $content-padding;
+    .avatar-box{
+      display: inline-block;
+      vertical-align: middle;
+      .avatar{
+        border-radius: $component-size;
+        width: $component-size;
+        height:$component-size;
+      }
+    }
+    .name{
+      display: inline-block;
+      vertical-align: middle;
+    }
+  }
+  .business-card-content{
+    padding:$content-padding;
+    .qrcode{
+      margin-bottom: $component-span;
+    }
+    .text-info{
+      .text-info-item{
+        [class^="icon-"]{
+          margin-right: $icon-text-span;
+          color: $dark;
+        }
+        display: inline-block;
+        margin-right: $icon-text-span;
+        font-size:$font-size;
+        color:$property-color;
+      }
+    }
+  }
+}

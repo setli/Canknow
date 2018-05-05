@@ -1,0 +1,42 @@
+.block {
+  display: block !important;
+}
+.inline-block {
+  display: inline-block !important;
+}
+.inline {
+  display: inline !important;
+}
+
+@mixin make-visible($size, $displayType){
+  .visible-#{$size}-#{$displayType}{
+    display:#{$displayType} !important;
+  }
+}
+@mixin make-visibles($size){
+  @include make-visible($size,inline);
+  @include make-visible($size,block);
+  @include make-visible($size,inline-block);
+  @include make-visible($size,flex);
+}
+@mixin make-hidden($size, $displayType){
+  .hidden-#{$size}-#{$displayType}{
+    display:none !important;
+  }
+}
+@mixin make-hiddens($size){
+  @include make-hidden($size,inline);
+  @include make-hidden($size,block);
+  @include make-hidden($size,inline-block);
+  @include make-hidden($size,flex);
+}
+
+@media (min-width: $sm-up) {
+  @include make-visibles(sm);
+}
+@media (min-width: $md-up) {
+  @include make-visibles(md);
+}
+@media (min-width: $lg-up) {
+  @include make-visibles(lg);
+}

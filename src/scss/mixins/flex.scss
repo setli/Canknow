@@ -1,0 +1,40 @@
+@mixin horizional-flex {
+  display: flex !important;
+  flex-direction: row;
+}
+@mixin inline-flex{
+  display:inline-flex;
+}
+@mixin align-center{
+  align-items: center;
+}
+@mixin justify-center{
+  justify-content: center;
+}
+@mixin inline-flex-align-center{
+  @include inline-flex;
+  @include align-center;
+}
+@mixin vertical-flex {
+  display: flex !important;
+  flex-direction: column;
+}
+@mixin vertical-flex-align-center {
+  @include vertical-flex;
+  @include align-center;
+}
+@mixin horizional-flex-align-center {
+  @include horizional-flex;
+  @include align-center;
+}
+@mixin flex($columns: 1) {
+  flex-shrink: $columns;
+  flex-grow: $columns;
+}
+@mixin flex-adapter{
+  @include flex(1);
+}
+@mixin flex-adapter-block{
+  display:block;
+  @include flex-adapter;
+}

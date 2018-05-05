@@ -1,0 +1,10 @@
+.log-list{
+  padding-left: 0;
+  list-style-type: none;
+  li.log-line{
+    padding-left: $text-padding;
+    &:hover{
+      background-color: $background-color;
+    }
+  }
+}

@@ -1,0 +1,18 @@
+.clearfix {
+  @include clearfix();
+}
+.center-block {
+  @include center-block();
+}
+.pull-left {
+  @include float-left;
+}
+.pull-right {
+  @include float-right;
+}
+.pull-center{
+  display: block;
+  float: none;
+  margin-left: auto;
+  margin-right: auto;
+}

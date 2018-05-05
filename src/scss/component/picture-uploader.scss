@@ -1,0 +1,17 @@
+.picture-list-uploader{
+  @include horizional-flex;
+  .picture-uploader-list{
+    display: block;
+    list-style: none;
+    padding-left: 0;
+    .picture-box{
+      display:inline-block;
+      margin-bottom: $component-span;
+      margin-right:$component-span;
+    }
+  }
+  .file-uploader-box{
+    display: block;
+    margin-bottom: $component-span;
+  }
+}

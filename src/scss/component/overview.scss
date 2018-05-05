@@ -1,0 +1,78 @@
+.overview-list{
+  @include list-unstyled;
+  @include horizional-flex-align-center;
+  .overview-item{
+    @include flex-adapter;
+    &:not(:first-child){
+      border-left:$border-width solid $border-color;
+    }
+  }
+}
+.overview{
+  background: $important-color;
+  text-align: center;
+  color: #fff;
+  overflow:hidden;
+  position: relative;
+  @include clearfix;
+  .overview-icon-block {
+    width: 8rem;
+    height: 8rem;
+    display: block;
+    float: left;
+    font-size: 4.8rem;
+    line-height: 8rem;
+    color: #fff;
+    opacity: 0.2;
+  }
+  .overview-details {
+    position: absolute;
+    right: $component-span;
+    padding-top:$component-span;
+    .overview-detail-label{
+      display:block;
+      color: #fff;
+      @include user-select-none;
+      text-align: right;
+      font-size:$font-size;
+      opacity: 0.8;
+      font-weight:bold;
+    }
+    .overview-detail-value{
+      display:block;
+      color: #fff;
+      @include user-select-none;
+      text-align: right;
+      font-size: $font-size-huger;
+      margin-bottom: $component-span;
+    }
+  }
+  .overview-more {
+    clear: both;
+    display: block;
+    position: relative;
+    text-transform: uppercase;
+    font-weight: 300;
+    font-size: $font-size;
+    opacity: 0.7;
+    color: #fff;
+    @include clearfix;
+    background-color: rgba(255, 255, 255, 0.3);
+    text-align:left;
+    padding: 0 $content-padding;
+    .overview-more-text{
+      height: $component-size;
+      line-height: $component-size;
+    }
+    .overview-more-icon {
+      display: inline-block;
+      float: right;
+      width: $component-size;
+      height: $component-size;
+      line-height: $component-size;
+      font-size: $component-size;
+      text-align:center;
+      cursor: pointer;
+    }
+  }
+}

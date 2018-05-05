@@ -1,0 +1,20 @@
+.mobile-login-page{
+  padding: $content-padding;
+  padding-top: $component-size-larger;
+  width: 100%;
+  height: 100%;
+  .login-box{
+    .login-avatar{
+      width: $component-size-huger;
+      height: $component-size-huger;
+      border-radius: 50%;
+      display: block;
+      margin: 0 auto $component-span-huger auto;
+    }
+    .login-form{
+      .input-wrapper{
+
+      }
+    }
+  }
+}

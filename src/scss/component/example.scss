@@ -1,0 +1,20 @@
+.example {
+  $height:5*$font-size;
+  border: $border-width solid $border-color;
+  background-color: #ffffff;
+  margin-bottom: $component-span;
+  position: relative;
+  border-radius: $border-radius;
+  &:hover{
+    box-shadow: $shadow-base;
+  }
+  .demo{
+    padding: $space2;
+    min-height: $height + $font-size;
+    position: relative;
+  }
+  .code-box{
+    border-top: $border-width solid $split-color;
+    min-height: 5*$font-size;
+  }
+}

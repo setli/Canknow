@@ -1,0 +1,38 @@
+$tooltip-arrow: "tooltip-arrow";
+$tooltip-max-width: 250px;
+$tooltip-arrow-width: $content-padding/2;
+$tooltip-distance: $tooltip-arrow-width - $border-width + $border-radius;
+$tooltip-bg: #333;
+
+.tooltip{
+  display: inline-block;
+
+  &-rel{
+    display: inline-block;
+    position: relative;
+  }
+
+  &-popper{
+    @include popper($tooltip-arrow, $tooltip-arrow-width, $tooltip-distance, $tooltip-bg);
+  }
+
+  &-inner{
+    max-width: $tooltip-max-width;
+    line-height: 1;
+    padding: $text-padding $content-padding;
+    color: #fff;
+    text-align: left;
+    text-decoration: none;
+    background-color: $tooltip-bg;
+    white-space: nowrap;
+    font-weight: bold;
+  }
+
+  &-arrow{
+    position: absolute;
+    width: 0;
+    height: 0;
+    border-color: transparent;
+    border-style: solid;
+  }
+}

@@ -1,0 +1,183 @@
+$grid-prefix: column- !default;
+$css-prefix-iconfont : icon !default;
+
+//theme
+$theme-color: #f1635e !default;
+$primary-color: rgb(21,136,255) !default;
+$secondary-color: #91d100 !default;
+$important-color: #f1635e !default;
+
+//layout
+$app-color: #fcfcfc !default;
+$background-color: #fafafa !default;
+$disabled-color: #f7f7f7 !default;
+$border-color: #f3f3f3 !default;
+$background-color-select-hover: #eee !default;
+$highlight-color: #ecf5ff;
+$split-color: #e9eaec !default;  // inside
+$button-color: #ddd !default;
+$property-color: #ccc !default;
+$icon-color: #ccc !default;
+$sub-color: #999 !default;
+$input-color: #666 !default;
+$content-color: #666 !default;
+$content-color-light: #fff !default;
+$sub-title-color: #666 !default;
+$title-color: #333 !default;
+$mask-color: rgba(0,0,0,0.4) !default;
+$mask-light-color: hsla(0,0%,100%,.9) !default;
+
+$hover-color-lighten:5%;
+$active-color-darken:5%;
+$select-color-darken:10%;
+
+$alert-lighten: 40%;
+
+//scene
+$info-color:rgb(21,136,255) !default;
+$success-color: #5cb85c !default;
+$warning-color: #ff9900 !default;
+$error-color: #d9534f !default;
+
+//function color
+$price-color: #DD2727 !default;
+$member-color: #bb9b6a !default;
+
+//透明色
+$transparent:transparent;
+$light-transparent:rgba(255, 255, 255, 0.5);
+$gray-transparent:rgba(128, 128, 128, 0.5);
+$dark-transparent:rgba(0, 0, 0, 0.5);
+
+//灰度色
+$black: #000 !default;
+$dark: #333 !default;
+$dark-gray: #999 !default;
+$gray: #ddd !default;
+$light-gray: #eee !default;
+$light:  #fff !default;
+$white:  #fff !default;
+
+//层叠顺序
+$zindex-fixed:100;
+$zindex-sticky:100;
+
+$zindex-masker:1000;
+
+$zindex-dropdown:10000;
+$zindex-popup:10000;
+$zindex-modal:10000;
+$zindex-tooltip: 1000;
+$zindex-transfer: 1060;
+
+$zindex-busy:100000;
+$zindex-toast:100000;
+$zindex-message:100000;
+$zindex-back-top:100000;
+$zindex-loading-bar:100000;
+
+//超链接色
+$link-color:$primary-color;
+$link-hover-color:darken($link-color, 15%);
+$link-active-color:darken($link-color, 15%);
+
+// Media queries breakpoints
+// Extra small screen / phone
+$xs:480px;
+$xs-up: $xs;
+$xs-down:($xs-up)-1;
+
+// Small screen / tablet
+$sm:768px;
+$sm-up: $sm;
+$sm-down:($sm-up)-1;
+
+// Medium screen / desktop
+$md:992px;
+$md-up: $md;
+$md-down:($md-up)-1;
+
+// Large screen / wide desktop
+$lg:1200px;
+$lg-up: $lg;
+$lg-down:($lg-up)-1;
+
+$space0:0;
+$space: 1.2rem !default;
+$space-harf: $space*0.5;
+$space1-5: $space*1.5;
+$space2: $space*2;
+$space3: $space*3;
+$space4: $space*4;
+$space5: $space*5;
+
+//圆角
+$border-radius: $space/3;
+$block-border-radius: $space/2;
+$module-radius: $space;
+
+$text-span:$space-harf;
+$layout-span: $space2;
+$component-span: $space;
+$component-span-large: $space2;
+$component-span-larger: $space3;
+$component-span-huger: $space4;
+$content-padding: $space;
+$input-padding:$space-harf;
+$text-padding:$space-harf;
+$icon-text-span:$space-harf;
+
+$font-weight-normal:normal;
+$font-weight-semibold:600;
+$font-weight-bold:bold;
+
+$page-header-height:6.4rem;
+
+$component-size-smaller:1.8rem;
+$component-size-small:2.4rem;
+$component-size:3.2rem;
+$component-size-large:4.4rem;
+$component-size-larger:6.4rem;
+$component-size-huger:9.6rem;
+
+$border-width:0.1rem;
+$border-width-large:0.2rem;
+
+$font-family: "Helvetica Neue",Helvetica,"PingFang SC","Hiragino Sans GB","Microsoft YaHei","微软雅黑",Arial,sans-serif;
+$font-size-small:1rem;
+$font-size:1.2rem;
+$font-size-middle:1.3rem;
+$font-size-large:1.4rem;
+$font-size-larger:1.6rem;
+$font-size-largest:2rem;
+$font-size-huger:2.4rem;
+$content-font-size:1.2rem;
+$line-height-base: 1.5;
+$line-height-computed: floor(($font-size * $line-height-base));
+
+// Shadow
+$shadow-color: rgba(0, 0, 0, 0.1);
+$shadow-card: 0 1px 1px 0 $shadow-color;
+$shadow-up: 0 0 6px $shadow-color;
+$shadow-down: 0 1px 6px $shadow-color;
+$shadow-left: -1px 0 6px $shadow-color;
+$shadow-right: 1px 0 6px $shadow-color;
+$shadow-base: $shadow-down;
+$light-shadow: 1px 1px 3px $border-color;
+
+// Animation
+$animation-time: 0.3s;
+$transition-time: 0.3s;
+$ripple-animation-transition:0.7s transform cubic-bezier(0.2, 0.4, 0.4, 0.9), 0.3s opacity cubic-bezier(0.2, 0.4, 0.4, 0.1);
+$ripple-animation-visible-opacity: 0.3;
+$ease-in-out : ease-in-out;
+
+// Slider
+$slider-color: lighten($primary-color, 10%);
+$slider-height: 4px;
+$slider-margin: 16px 0;
+$slider-button-wrap-size: 18px;
+$slider-button-wrap-offset: -4px;
+$slider-disabled-color: $disabled-color;
+
+$cursor-disabled: not-allowed;

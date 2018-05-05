@@ -1,0 +1,46 @@
+.tree{
+  cursor: default;
+  .tree-node{
+    outline: none;
+    &.is-current{
+      &>.tree-node-content{
+        background-color: $background-color-select-hover;
+      }
+    }
+    .tree-node-content{
+      @include horizional-flex-align-center;
+      @include flex-adapter;
+      align-items: center;
+      cursor: pointer;
+      margin-bottom: $border-width;
+      padding: $text-padding 0;
+      .tree-node-expand-icon{
+        cursor: pointer;
+        font-size: $font-size;
+        transform: rotate(0deg);
+        transition: transform $transition-time ease-in-out;
+        width: $component-size-small;
+        height: $component-size-small;
+        line-height: $component-size-small;
+        text-align: center;
+        &.expanded {
+          transform: rotate(90deg);
+        }
+      }
+      &.checkbox {
+        margin-right: $text-span;
+      }
+      .tree-node-label{
+        font-size: $font-size;
+        @include flex-adapter;
+      }
+      .tree-node-tool-bar{
+        button{
+          &:not(:last-child) {
+            margin-right: $component-span;
+          }
+        }
+      }
+    }
+  }
+}

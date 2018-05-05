@@ -1,0 +1,15 @@
+@for $i from 1 through 20{
+  $size:$i*5;
+  .width-em#{$size}{
+    width: $size*1rem;
+  }
+  .height-em#{$size}{
+    height: $size*1rem;
+  }
+}
+.width-full {
+  width: 100%;
+}
+.height-full {
+  height: 100%;
+}

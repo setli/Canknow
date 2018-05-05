@@ -1,0 +1,63 @@
+.image-button{
+  @extend .base-button;
+  height:$component-size;
+  margin-right: $component-span;
+  background: transparent;
+  border: none;
+
+  &.small{
+    width: $component-size-small;
+    height: $component-size-small;
+  }
+  &.large{
+    width: $component-size-large;
+    height: $component-size-large;
+  }
+  &.larger{
+    width: $component-size-larger;
+    height: $component-size-larger;
+  }
+  &.huger{
+    width: $component-size-huger;
+    height: $component-size-huger;
+  }
+  &.circle {
+    border-radius: 100%;
+  }
+  &.border{
+    border-width: $border-width;
+    border-style: solid;
+    &.info {
+      border-color:$info-color;
+    }
+    &.success {
+      border-color: $success-color;
+    }
+    &.warning {
+      border-color: $warning-color;
+    }
+    &.danger {
+      border-color: $error-color;
+    }
+    &.circle{
+      background:transparent;
+      &.dark{
+        border-color:$dark;
+      }
+      &.gray {
+        border-color:$gray;
+      }
+      &.light {
+        border-color: $light;
+      }
+    }
+  }
+  img{
+    width: 100%;
+    height:100%;
+    display: block;
+  }
+  &.with-padding{
+    padding:$space-harf;
+  }
+}

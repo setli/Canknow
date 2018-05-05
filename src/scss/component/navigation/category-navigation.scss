@@ -1,0 +1,40 @@
+.category-navigation{
+  background-color:#fff;
+  margin-bottom:$component-span;
+  box-shadow: $shadow-base;
+  .menu{
+    height: auto;
+    line-height: $component-size-large;
+    &.menu-list{
+      list-style-type:none;
+      padding-left:0;
+      margin:0;
+      @include horizional-flex-align-center;
+      .menu-item{
+        @include flex-adapter;
+        width:25%;
+        border:$border-width solid transparent;
+        text-align:center;
+        padding: 0 $content-padding;
+        @include user-select-none;
+        .menu-item-title-box{
+          .menu-item-title{
+            color: $title-color;
+            font-size: $font-size;
+            border: $border-width solid transparent;
+            border-radius:$border-radius;
+            padding: 0 $text-span;
+            border-radius: $border-radius;
+          }
+        }
+        &.active{
+          .menu-item-title-box{
+            .menu-item-title{
+              border-color:$important-color;
+            }
+          }
+        }
+      }
+    }
+  }
+}

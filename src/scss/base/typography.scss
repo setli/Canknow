@@ -1,0 +1,186 @@
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+    font-weight: 200;
+    small{
+        color: $sub-title-color;
+    }
+}
+@for $i from 1 through 6{
+    h#{$i}{
+        font-size: 3.8rem - $i*0.4rem;
+    }
+}
+.block-title {
+    font-weight: normal;
+}
+
+address, dl, ol, p, ul {
+    margin-bottom: $component-span;
+}
+dl, ol, p, pre, ul{
+    margin-top: 0;
+}
+ol ol, ol ul, ul ol, ul ul {
+    margin-bottom: 0;
+}
+
+p {
+    line-height: 1.5;
+}
+
+hr{
+    border: $border-width solid $border-color;
+    &.well-hr {
+        height: 1px;
+        margin: 4rem 0;
+        clear: both;
+        background-image: -webkit-linear-gradient(left, #b8e1ff 33.3333%, #fcd2c5 33.3333%, #fcd2c5 66.6666%, #e0c5eb 66.6666%);
+        background-image: linear-gradient(to right, #b8e1ff 33.3333%, #fcd2c5 33.3333%, #fcd2c5 66.6666%, #e0c5eb 66.6666%);
+        border: 0;
+    }
+}
+.section{
+    padding-top:4.8rem;
+    .dark{
+        h1,
+        h2,
+        h3,
+        h4,
+        h5,
+        h6{
+            color:#fff;
+        }
+        p{
+            color:$sub-color;
+        }
+    }
+}
+
+.dl-horizontal{
+    dt {
+        float: left;
+        width: 16rem;
+        overflow: hidden;
+        clear: left;
+        text-align: right;
+        text-overflow: ellipsis;
+        white-space: nowrap;
+        font-weight: bold;
+    }
+    dd {
+        margin-left: 18rem;
+        &:after, &:before {
+            display: table;
+            content: " ";
+        }
+        &:after {
+            clear: both;
+        }
+    }
+}
+
+@media (max-width: $sm) {
+    .dl-horizontal{
+        dt{
+            width: 10rem;
+        }
+        dd {
+            margin-left: 12rem;
+        }
+    }
+}
+
+.text-primary,
+.text-primary:hover {
+    color: $primary-color;
+}
+.text-success,
+.text-success:hover {
+    color: $success-color;
+}
+.text-danger,
+.text-danger:hover {
+    color: $error-color;
+}
+.text-warning,
+.text-warning:hover {
+    color: $warning-color;
+}
+.text-info,
+.text-info:hover {
+    color: $info-color;
+}
+
+blockquote {
+    background: $background-color;
+    border-left: 0.6rem solid #ccc;
+    margin: 1.5rem 0;
+    padding: $content-padding;
+    &:before {
+        color: $property-color;
+        content: open-quote;
+        font-size: 4rem;
+        line-height: 0.1rem;
+        vertical-align: -0.4rem;
+    }
+    .small, footer, small {
+        display: block;
+        font-size: 80%;
+        color: $content-color;
+    }
+    .small:before, footer:before, small:before {
+        content: '\2014 \00A0';
+    }
+}
+
+pre {
+    display: block;
+    padding: $content-padding;
+    margin: 0 0 $component-span;
+    word-break: break-all;
+    word-wrap: break-word;
+    color: $content-color;
+}
+
+.banner-box{
+    overflow:hidden;
+    position:relative;
+}
+
+.section-title{
+    &.pretty{
+        font-size: 2rem;
+        font-weight:bold;
+        @include horizional-flex;
+        line-height: 1;
+        padding:0 $content-padding;
+        &:before{
+            content:"";
+            display: block;
+            @include flex-adapter;
+            height: $space;
+            border-bottom:$border-width solid $border-color;
+            margin-right:$component-span
+        }
+        &:after{
+            content:"";
+            display: block;
+            @include flex-adapter;
+            height: $space;
+            border-bottom:$border-width solid $border-color;
+            margin-left:$component-span;
+        }
+    }
+}
+
+.money {
+    color: $price-color;
+}
+.price-sign {
+    font-size: 80%;
+    font-style: normal;
+}

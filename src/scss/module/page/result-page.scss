@@ -1,0 +1,35 @@
+.result-page{
+  @extend .page;
+  text-align: center;
+  padding: $content-padding;
+  .result-icon-box{
+    display: block;
+    position: relative;
+    margin-bottom: $space3;
+    .result-icon{
+      display: inline-block;
+      font-size:$component-size-huger;
+      width: $component-size-huger;
+      height:$component-size-huger;
+      border-radius: $component-size-huger;
+      text-align: center;
+      line-height: $component-size-huger;
+      color:$sub-color;
+      &.success{
+        color: $success-color;
+      }
+      &.error{
+        color: $error-color;
+      }
+    }
+  }
+  .result-title{
+    font-weight: 400;
+    font-size: $space2;
+  }
+  .result-message{
+    color:$sub-color;
+    font-size: $font-size-large;
+    margin-bottom: $space3;
+  }
+}

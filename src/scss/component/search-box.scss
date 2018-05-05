@@ -1,0 +1,23 @@
+.search-box{
+  &.radius{
+    border-radius: 0.8rem;
+    overflow: hidden;
+  }
+  .input-wrapper{
+    input{
+
+    }
+    .input-addon{
+      color:$sub-color;
+    }
+  }
+  &.gray{
+    background: rgba(0,0,0,0.08);
+    .input-wrapper{
+      input{
+        border-color:transparent;
+        background: transparent;
+      }
+    }
+  }
+}

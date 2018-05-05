@@ -1,0 +1,58 @@
+.breadcrumb {
+  position: relative;
+  height: $component-size;
+  display: block;
+  padding: 0;
+  .breadcrumb-list {
+    background-color: transparent;
+    font-size: $font-size;
+    color: $title-color;
+    border-radius: 0;
+    padding: 0;
+    margin:0;
+    .breadcrumb-item {
+      display: inline-block;
+      .breadcrumb-item-link {
+        display: block;
+        color: $title-color;
+        height: $component-size;
+        line-height: $component-size;
+        border-top: $border-width solid $border-color;
+        border-bottom: $border-width solid $border-color;
+        position: relative;
+        background-color: #fff;
+        text-decoration: none;
+        padding: 0 $component-size/2 0 $component-size;
+        &:before {
+          content: " ";
+          display: block;
+          width: 0;
+          height: 0;
+          border-top: 1.7rem solid transparent;
+          border-bottom: 1.7rem solid transparent;
+          border-left: 1rem solid $sub-color;
+          position: absolute;
+          top: 50%;
+          margin-top: -1.7rem;
+          margin-left: 0;
+          left: 100%;
+          z-index: 3;
+        }
+        &:after {
+          content: " ";
+          display: block;
+          width: 0;
+          height: 0;
+          border-top: 1.7rem solid transparent;
+          border-bottom: 1.7rem solid transparent;
+          border-left: 1rem solid #FFF;
+          position: absolute;
+          top: 50%;
+          margin-top: -1.7rem;
+          left: 100%;
+          z-index: 3;
+        }
+      }
+    }
+  }
+}

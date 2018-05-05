@@ -1,0 +1,72 @@
+.profile{
+  @include horizional-flex;
+  position:relative;
+  .access-count{
+    padding: 0 $content-padding;
+    color:#fff;
+    font-size:$font-size;
+    background-color:$important-color;
+    position: absolute;
+    top:0;
+    right:0;
+    line-height: 1;
+  }
+  .profile-avatar-box{
+    display:block;
+    .profile-avatar{
+
+    }
+  }
+  .profile-body{
+    @include flex-adapter;
+    padding-left:$content-padding;
+    .profile-name{
+      margin:0 0 $component-span 0;
+      font-weight:bold;
+      font-size: $font-size;
+      &.thin {
+        font-weight: normal;
+      }
+    }
+    .profile-additional-property{
+      margin:0 0 $component-span 0;
+      color: $sub-color;
+      font-size: $font-size;
+      .key{
+        margin-right:$text-span;
+      }
+      .value{
+
+      }
+      .main-number{
+        background-color:$important-color;
+        color: #fff;
+        padding: 0 $content-padding;
+        font-size: $font-size;
+        line-height: 1;
+        font-weight: bold;
+        border-radius: $border-radius;
+      }
+      &:last-child{
+        margin-bottom:0;
+      }
+    }
+  }
+  .master-button{
+    position:absolute;
+    right:$content-padding;
+    top:50%;
+    margin-top:-$component-size/2;
+  }
+}
+
+.profile-list{
+  @include list-unstyled;
+  li{
+    border-bottom:$border-width solid #eee;
+  }
+  .profile{
+    background-color:#fff;
+    padding: $content-padding;
+  }
+}

@@ -1,0 +1,92 @@
+.switch {
+  display: inline-block;
+  width: $component-size-small*2;
+  height: $component-size-small;
+  line-height: $component-size-small -(2*$border-width);
+  border-radius: $component-size-small;
+  vertical-align: middle;
+  border: $border-width solid $border-color;
+  background-color: $background-color;
+  position: relative;
+  cursor: pointer;
+  user-select: none;
+  transition: all $transition-time $ease-in-out;
+
+  &.large{
+    width: $component-size * 2;
+  }
+
+  &.checked {
+    .switch-inner{
+      color: #fff;
+    }
+  }
+  .switch-inner {
+    color: $sub-color;
+    font-size: $font-size;
+    position: absolute;
+    right: 0;
+    width: calc(100% - 2.2rem);
+    text-align: center;
+
+    i {
+      width:$component-size-small/2;
+      height: $component-size-small/2;
+      text-align: center;
+    }
+  }
+
+  &:after {
+    content: '';
+    width: $component-size-small -(2*$border-width);
+    height: $component-size-small -(2*$border-width);
+    border-radius: $component-size-small -(2*$border-width);
+    background-color: #fff;
+    position: absolute;
+    cursor: pointer;
+    transition: left $transition-time $ease-in-out, width $transition-time $ease-in-out;
+  }
+
+  &:active:after {
+    width: $component-size-small;
+  }
+
+  &:focus {
+    box-shadow: $shadow-base;
+    outline: 0;
+  }
+
+  &:focus:hover {
+    box-shadow: none;
+  }
+
+  &.checked {
+    border-color: $success-color;
+    background-color: $success-color;
+
+    .switch-inner {
+      left: 0;
+    }
+
+    &:after {
+      right: 0;
+    }
+
+    &:active:after {
+    }
+  }
+
+  &.disabled {
+    background: $disabled-color;
+    border-color: $disabled-color;
+
+    &:after {
+      background: #ccc;
+      cursor: not-allowed;
+    }
+
+    .switch-inner {
+      color: #ccc;
+    }
+  }
+}

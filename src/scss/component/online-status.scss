@@ -1,0 +1,27 @@
+.online-status{
+  position: relative;
+  &.online{
+    .online-status-dot{
+      background-color: $success-color;
+    }
+  }
+  &.offline{
+    .online-status-dot{
+      background-color: $error-color;
+    }
+  }
+  .online-status-dot {
+    position: absolute;
+    transform: translateX(-50%);
+    transform-origin: 0 center;
+    transition: $transition-time;
+    bottom: - $space-harf;
+    right: - $space;
+    height: $space;
+    width: $space;
+    border-radius: 100%;
+    background-color: $background-color;
+    z-index: 10;
+    box-shadow: $shadow-base;
+  }
+}

@@ -1,0 +1,23 @@
+.view-page-head{
+  @include horizional-flex-align-center;
+  margin-bottom: $component-span;
+  .view-page-title{
+    @include flex-adapter;
+    margin:0;
+    font-size: 2rem;
+    font-weight: 400;
+    small{
+      font-size: $font-size;
+      font-weight: 400;
+    }
+  }
+}
+
+@media (max-width: $sm) {
+  .view-page-head{
+    display: block !important;
+    .view-page-title{
+      margin-bottom: $layout-span;
+    }
+  }
+}

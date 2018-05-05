@@ -1,0 +1,111 @@
+$slider-prefix-class: "slider";
+
+.#{$slider-prefix-class} {
+  line-height: normal;
+  &-wrap{
+    width: 100%;
+    height: $slider-height;
+    margin: $component-span;
+    background-color: $disabled-color;
+    border-radius: $border-radius;
+    vertical-align: middle;
+    position: relative;
+    cursor: pointer;
+  }
+
+  &-button-wrap{
+    @include square($slider-button-wrap-size);
+    text-align: center;
+    background-color: transparent;
+    position: absolute;
+    top: $slider-button-wrap-offset;
+    transform: translateX(-50%);
+
+    .tooltip {
+      display: block;
+      user-select: none;
+    }
+  }
+
+  &-button{
+    width: $space;
+    height: $space;
+    border: $border-width-large solid $slider-color;
+    border-radius: 50%;
+    background-color: #fff;
+    transition: all $transition-time linear;
+
+    &:hover,
+    &-dragging
+    {
+      border-color: $primary-color;
+      transform: scale(1.5);
+    }
+
+    &:hover{
+      cursor: grab;
+    }
+    &-dragging,
+    &-dragging:hover
+    {
+      cursor: grabbing;
+    }
+  }
+
+  &-bar{
+    height: $slider-height;
+    background: $slider-color;
+    border-radius: $border-radius;
+    position: absolute;
+  }
+
+  &-stop{
+    position: absolute;
+    @include square($slider-height);
+    border-radius: 50%;
+    background-color: $slider-disabled-color;
+    transform: translateX(-50%);
+  }
+}
+
+.#{$slider-prefix-class}-disabled{
+  cursor: not-allowed;
+
+  .#{$slider-prefix-class}-wrap{
+    background-color: $slider-disabled-color;
+    cursor: not-allowed;
+  }
+  .#{$slider-prefix-class}-bar{
+    background-color: $slider-disabled-color;
+  }
+
+  .#{$slider-prefix-class}-button{
+    border-color: $slider-disabled-color;
+
+    &:hover,
+    &-dragging
+    {
+      border-color: $disabled-color;
+    }
+    &:hover{
+      cursor: not-allowed;
+    }
+    &-dragging,
+    &-dragging:hover
+    {
+      cursor: not-allowed;
+    }
+  }
+}
+
+.#{$slider-prefix-class}-input{
+  .#{$slider-prefix-class}-wrap{
+    width: auto;
+    margin-right: 100px;
+  }
+
+  .input-number{
+    float: right;
+    margin-top: -14px;
+  }
+}

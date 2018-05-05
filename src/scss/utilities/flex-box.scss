@@ -1,0 +1,24 @@
+﻿.horizional-flex-box {
+  @include horizional-flex-box;
+}
+.horizional-flex-box-align-center{
+  @include horizional-flex-box-align-center;
+}
+.vertical-flex-box {
+  @include vertical-flex-box;
+}
+.flex-box-adapter {
+  @include flex-box-adapter;
+}
+.flex-box-adapter-block {
+  @include flex-box-adapter-block;
+}
+.vertical-flex-box-inherit {
+  @include vertical-flex-box;
+  @include flex-adapter-block;
+}
+
+.horizional-flex-box-inherit {
+  @include horizional-flex-box;
+  @include flex-box-adapter-block;
+}

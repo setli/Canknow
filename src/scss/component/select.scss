@@ -1,0 +1,93 @@
+.select{
+  @extend .input-common;
+  min-width: 10rem;
+  .select-selection {
+    height: $component-size;
+    padding: 0 $content-padding;
+    line-height: $component-size;
+    overflow: hidden;
+    @include user-select-none;
+    display: block;
+    user-select: none;
+    position: relative;
+    font-size: $font-size;
+    cursor: pointer;
+    background-color: #fff;
+    transition: all $transition-time $ease-in-out;
+    border:$border-width solid $border-color;
+    .select-arrow{
+      position: absolute;
+      right: $content-padding;
+      top:50%;
+      transform: translateY(-50%);
+    }
+    .select-close{
+      margin-right: $space2;
+    }
+    .select-input{
+      width: 100%;
+      overflow: hidden;
+      border:none;
+      display: block;
+    }
+    .select-placeholder{
+
+    }
+    .select-selected-value{
+      cursor: pointer;
+      .select-selected-icon{
+        display: inline-block;
+        vertical-align: middle;
+        margin-right: $text-span;
+        cursor: pointer;
+      }
+      .select-selected-text{
+        display: inline-block;
+        vertical-align: middle;
+        cursor: pointer;
+      }
+    }
+  }
+  &.multiple{
+    .select-selection{
+      height: initial;
+      min-height: $component-size;
+    }
+  }
+  .select-not-found{
+
+  }
+}
+.select-dropdown{
+  max-height: 30rem;
+  overflow-y: auto;
+  .select-not-found,
+  .select-dropdown-list{
+    @include list-unstyled;
+    margin: 0;
+    .select-item{
+      @include user-select-none;
+      padding: $content-padding $content-padding;
+      font-size: $font-size;
+      white-space: nowrap;
+      cursor: pointer;
+      transition: background $transition-time $ease-in-out;
+      border-bottom: $border-width solid $border-color;
+      .select-item-icon{
+        display: inline-block;
+        vertical-align: middle;
+        margin-right: $text-span;
+      }
+      .select-item-text{
+        display: inline-block;
+        vertical-align: middle;
+      }
+      &:hover{
+        background:$background-color-select-hover;
+      }
+      &.select-item-disabled {
+        color: $sub-color;
+      }
+    }
+  }
+}

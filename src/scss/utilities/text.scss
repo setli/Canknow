@@ -1,0 +1,41 @@
+.text-justify  { text-align: justify !important; }
+.text-nowrap   { white-space: nowrap !important; }
+.text-left {
+  text-align: left !important;
+}
+.text-right {
+  text-align: right !important;
+}
+.text-center {
+  text-align: center !important;
+}
+
+.text-ellipsis {
+  @include text-ellipsis;
+}
+
+// Transformation
+.text-lowercase  { text-transform: lowercase !important; }
+.text-uppercase  { text-transform: uppercase !important; }
+.text-capitalize { text-transform: capitalize !important; }
+
+// Weight and italics
+.font-weight-normal { font-weight: $font-weight-normal; }
+.font-weight-semibold{font-weight: $font-weight-semibold; }
+.font-weight-bold   { font-weight: $font-weight-bold; }
+.font-italic { font-style: italic; }
+
+// Contextual colors
+.text-white {
+  color: #fff !important;
+}
+
+@include text-emphasis-variant('.text-primary', $primary-color);
+
+@include text-emphasis-variant('.text-success', $success-color);
+
+@include text-emphasis-variant('.text-info', $info-color);
+
+@include text-emphasis-variant('.text-warning', $warning-color);
+
+@include text-emphasis-variant('.text-danger', $error-color);

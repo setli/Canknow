@@ -1,0 +1,33 @@
+.icon-with-text-button{
+  @extend .text-button;
+  padding: 0;
+  background-image: none;
+  background-color: transparent;
+  text-align: left;
+  cursor: pointer;
+  .text{
+    vertical-align: middle;
+    line-height:$component-size - (2*$border-width);
+    display:inline-block;
+    height: $component-size - (2*$border-width);
+  }
+  [class*=icon-]{
+    font-size: 1.5*$font-size;
+    color: $icon-color;
+    width:$component-size - (2*$border-width);
+    height:$component-size - (2*$border-width);
+    line-height:$component-size -4*$border-width;
+    border:$border-width solid transparent;
+    vertical-align: middle;
+    text-align:center;
+    display:inline-block;
+    &.border{
+      border-color: $border-color;
+      margin-right:$icon-text-span;
+      font-size:1.5*$font-size -(2*$border-width);
+      & .circle{
+        border-radius:$component-size - (2*$border-width);
+      }
+    }
+  }
+}

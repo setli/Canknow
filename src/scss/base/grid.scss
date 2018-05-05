@@ -1,0 +1,131 @@
+.container {
+  padding: $content-padding;
+}
+
+.container-responsive {
+  margin: 0 auto;
+  width:100%;
+  max-width: 1080px;
+}
+@media (min-width: $sm) {
+  .container-responsive {
+    width: $sm;
+  }
+}
+
+@media (min-width: $lg) {
+  .container-responsive {
+    width: $lg;
+  }
+}
+
+.grid {
+  display: block;
+  position: relative;
+  .grid.condensed .row{
+    .row{
+      margin: 0 0 0 0;
+    }
+  }
+}
+
+.row {
+  width: 100%;
+  display: block;
+  margin-bottom: $layout-span;
+  @include clearfix;
+  >[class*="#{$grid-prefix}"] {
+    display: block;
+    width: 100%;
+    min-height: 1px;
+  }
+  &.separated-columns>[class*="#{$grid-prefix}"] {
+    padding-left: $content-padding;
+    padding-right: $content-padding;
+  }
+  &.disable-responsive{
+    [class*="#{$grid-prefix}"] {
+      float: left;
+    }
+  }
+}
+
+.flex-row{
+  width: 100%;
+  @include horizional-flex;
+  margin-bottom: $layout-span;
+  >[class*="#{$grid-prefix}-"] {
+    display: block;
+    min-height: 1px;
+  }
+  &.even{
+    >[class*="#{$grid-prefix}-even"] {
+      display: block;
+      width: 100%;
+      min-height: 1px;
+    }
+  }
+}
+
+@mixin make-column($size: ''){
+  .flex-row{
+    &>[class*="#{$grid-prefix}"]{
+      float: none;
+    }
+    &>.#{$grid-prefix}even{
+      flex:1;
+    }
+    &.spaced{
+      >[class*="#{$grid-prefix}even"]:not(:last-child) {
+        margin-right: $component-span;
+      }
+    }
+  }
+  @if ($size=='.sm'){
+    .row-24{
+
+    }
+  }
+  .row{
+    @for $i from 1 through 10{
+      &>.#{$grid-prefix}#{$i}#{$size}{
+        width: $i/10 * 100%;
+      }
+      &>.#{$grid-prefix}#{$i}-5#{$size}{
+        width: ($i+0.5)/10 * 100%;
+      }
+    }
+  }
+
+  .row-12{
+    @for $i from 1 through 12{
+      &>.#{$grid-prefix}#{$i}#{$size}{
+        width: $i/12 * 100%;
+      }
+    }
+  }
+
+  .row-24{
+    @for $i from 1 through 24{
+      &>.#{$grid-prefix}#{$i}#{$size}{
+        width: $i/24 * 100%;
+      }
+    }
+  }
+  [class*="#{$grid-prefix}"]{
+    &#{$size}{
+      float: left;
+      min-height: 1px;
+    }
+  }
+}
+@include make-column('.no-responsive');
+@media (min-width: $sm-up) {
+  @include make-column('.sm');
+}
+@media (min-width: $md-up) {
+  @include make-column('.md');
+}
+@media (min-width: $lg-up) {
+  @include make-column('.lg');
+}

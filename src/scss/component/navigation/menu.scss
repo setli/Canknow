@@ -1,0 +1,144 @@
+.menu{
+  @include list-unstyled;
+  .menu-item{
+    cursor: pointer;
+    .menu-item-title-box{
+      .menu-item-title{
+
+      }
+      .menu-item-icon{
+
+      }
+    }
+  }
+  .submenu{
+    .submenu-title-box{
+      .menu-item-title{
+
+      }
+      .menu-item-icon{
+
+      }
+    }
+  }
+  &.horizontal{
+    @include horizional-flex-align-center;
+    .menu-item{
+      padding: 0 $content-padding;
+      &.active{
+        color:$primary-color;
+      }
+      .menu-item-title-box{
+        padding: 0 $text-padding;
+        .menu-item-icon{
+          display: inline-block;
+          vertical-align: middle;
+          margin-right: $text-span;
+        }
+        .menu-item-title{
+          @include user-select-none;
+          cursor: pointer;
+          display: inline-block;
+          vertical-align: middle;
+          font-size: $font-size;
+        }
+      }
+    }
+    .submenu{
+      .submenu-title-box{
+        .menu-item-title{
+          font-size: $font-size;
+        }
+        .menu-item-icon{
+
+        }
+      }
+    }
+  }
+
+  &.vertical{
+    margin-bottom: 0;
+    .menu-item-title{
+      @include flex-adapter;
+      user-select: none;
+      color:$title-color;
+      display: block;
+    }
+    .menu-item-icon{
+      margin-right: $component-span;
+      display: block;
+      font-size: $font-size-larger;
+      width: $font-size-larger;
+      height: $font-size-larger;
+      line-height: $font-size-larger;
+    }
+    .menu-item{
+      user-select: none;
+      &.selected{
+        .menu-item-title-box{
+          background-color:darken($background-color, $select-color-darken);
+          opacity: 1;
+          .menu-item-title{
+
+          }
+        }
+      }
+      .menu-item-title-box{
+        margin-bottom: 1px;
+        border-bottom: $border-width solid $border-color;
+        height: $component-size-large;
+        padding: 0 $content-padding;
+        opacity: 0.7;
+        transition:background-color $transition-time;
+        @include horizional-flex-align-center;
+        &:hover{
+          background-color: darken($background-color, $active-color-darken);
+          opacity: 1;
+        }
+      }
+    }
+    .submenu{
+      &.opened{
+        &>.submenu-title-box{
+          background: darken($background-color, $select-color-darken);
+          opacity: 1;
+          .menu-item-title{
+            color:$title-color;
+          }
+          .menu-item-icon{
+            color:$title-color;
+          }
+          .submenu-toggle-icon{
+            transform: rotateZ(180deg);
+          }
+        }
+      }
+      .submenu-title-box{
+        border-bottom: $border-width solid $border-color;
+        user-select: none;
+        cursor: pointer;
+        opacity: 0.7;
+        height: $component-size-large;
+        padding: 0 $content-padding;
+        @include horizional-flex-align-center;
+        .menu-item-title{
+          font-size: $font-size;
+        }
+        .menu-item-icon{
+
+        }
+        .submenu-toggle-icon{
+          display: block;
+          transition: $transition-time;
+        }
+      }
+      .menu-item{
+        .menu-item-title-box{
+          .menu-item-title{
+            font-size: $font-size;
+          }
+        }
+      }
+    }
+  }
+}

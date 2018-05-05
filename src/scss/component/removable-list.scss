@@ -1,0 +1,15 @@
+.removable-list{
+  @include list-unstyled;
+  .removable-item{
+    @include horizional-flex-align-center;
+    margin-bottom:$component-span;
+    background-color: $background-color;
+    .removable-item-handler-wrap{
+      text-align: center;
+      padding: 0 $content-padding;
+    }
+    .removable-item-content{
+      @include flex-adapter;
+    }
+  }
+}

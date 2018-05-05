@@ -1,0 +1,38 @@
+﻿.horizional-flex {
+    @include horizional-flex;
+}
+
+.vertical-flex {
+    @include vertical-flex;
+}
+
+.flex-adapter {
+    @include flex-adapter-block;
+}
+@media (max-width: $sm) {
+    .flex-adapter-small{
+        @include flex-adapter-block;
+    }
+}
+@media (min-width: $sm) {
+    .flex-adapter-large{
+        @include flex-adapter-block;
+    }
+}
+.vertical-flex-inherit {
+    @include vertical-flex;
+    @include flex-adapter-block;
+}
+
+.horizional-flex-inherit {
+    @include horizional-flex;
+    @include flex-adapter-block;
+}
+
+.align-center{
+    @include align-center;
+}
+
+.justify-center{
+    @include justify-center;
+}

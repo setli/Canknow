@@ -1,0 +1,161 @@
+.modal-wrap {
+  position: fixed;
+  overflow: auto;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  z-index:$zindex-modal;
+  overflow-scrolling: touch;
+  outline: 0;
+  width: 100%;
+  height: 100%;
+  @include horizional-flex-align-center;
+  @include justify-center;
+  &.modal-hidden {
+    display: none !important;
+  }
+
+  .modal{
+    width: 100%;
+    z-index: $zindex-modal;
+    background-color: #fff;
+    @include backface-visibility(hidden);
+    transform-style:preserve-3d;
+    .container-responsive{
+      position: relative;
+    }
+    &.match-parent {
+      height: calc(100% - #{$component-size * 2});
+      .modal-box{
+        height: 100%;
+        @include vertical-flex-box;
+        .modal-body{
+          @include flex-adapter;
+          @include vertical-flex-box;
+        }
+      }
+    }
+    &.modal-page{
+      top:0;
+      height:100%;
+      width: 100% !important;
+      margin: 0;
+      .modal-box{
+        @include vertical-flex;
+        height: 100%;
+        .modal-header{
+          border-bottom: $border-width solid $border-color;
+        }
+        .modal-body{
+          @include flex-adapter;
+          overflow: auto;
+          padding:0;
+        }
+      }
+    }
+    &-box{
+      .modal-header{
+        background-color:#fff;
+        padding: 0 $content-padding;
+        .modal-header-wrap{
+          @include horizional-flex-align-center;
+          position: relative;
+          height: $component-size-large;
+          .modal-title{
+            margin: 0;
+            height: $component-size;
+            line-height: $component-size;
+            text-align: center;
+            font-weight: bold;
+            color:$title-color;
+            user-select: none;
+            @include flex-adapter;
+          }
+          .icon-button{
+            display: block;
+            color:$title-color;
+            cursor: pointer;
+          }
+          .button-prev{
+            left:$content-padding;
+          }
+          .button-close{
+            right:$content-padding;
+          }
+        }
+      }
+      .modal-body{
+        padding:$content-padding;
+      }
+      .modal-footer{
+        padding:$content-padding;
+        background: #fff;
+        text-align: right;
+        .text-button{
+          margin-left: $text-span;
+        }
+      }
+    }
+  }
+}
+
+@media (max-width: $sm) {
+  .modal-wrap{
+    .modal{
+      width:calc(100% - #{$content-padding}*2)!important;
+      margin: 0 $content-padding;
+      .modal-header{
+        .modal-title{
+          @include transition(0.3s);
+        }
+        .button-close{
+          display: none;
+        }
+      }
+      .modal-footer {
+        padding: 0;
+        @include horizional-flex-align-center;
+        border-top: $border-width solid $border-color;
+        .text-button {
+          display: block;
+          @include flex-adapter;
+          margin-left: 0;
+          border-color: transparent;
+          border-radius: 0;
+          &:not(:last-child) {
+            border-right: $border-width solid $border-color;
+          }
+        }
+      }
+    }
+  }
+}
+
+.modal-confirm-body{
+  padding: $content-padding;
+  @include horizional-flex-align-center;
+  .modal-confirm-body-icon{
+    &-info{
+      color:$info-color;
+    }
+    &-success{
+      color:$success-color;
+    }
+    &-error{
+      color:$error-color;
+    }
+    &-warning{
+      color:$warning-color;
+    }
+    display: block;
+    width: $component-size-large;
+    height: $component-size-large;
+    font-size: $component-size-large;
+    line-height: 1;
+    margin-right: $component-span;
+  }
+  .modal-confirm-body-content{
+    @include flex-adapter;
+  }
+}

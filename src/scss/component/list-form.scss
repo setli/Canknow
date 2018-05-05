@@ -1,0 +1,35 @@
+.list-form {
+  border-bottom:$border-width solid $border-color;
+}
+.list-form-list{
+  @include list-unstyled;
+  margin-bottom:0;
+  li{
+    background-color: #fff;
+    &:not(:last-child){
+      border-bottom:$border-width solid $border-color;
+    }
+  }
+  .form-group{
+    @include horizional-flex-align-center;
+    margin-bottom:0;
+    padding:$content-padding;
+    .form-group-key{
+      display:block;
+      width:10rem;
+      margin:0 1rem 0 0;
+      font-size:$font-size;
+      font-weight:normal;
+    }
+    .form-group-block{
+      @include flex-adapter;
+      text-align: right;
+      input{
+        border-color:transparent;
+      }
+      .static-text {
+        border-color: transparent;
+      }
+    }
+  }
+}

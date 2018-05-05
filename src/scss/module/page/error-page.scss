@@ -1,0 +1,17 @@
+.error-page{
+  @extend .page;
+  .error-page-header{
+    background-color: #68217a;
+    padding:0.3rem $content-padding;
+  }
+  .error-body{
+    text-align:center;
+    padding-top:8rem;
+    .error-code{
+      display: block;
+      font-size: 5em;
+      color: $sub-color;
+      font-family: Impact, Charcoal, Sans-Serif;
+    }
+  }
+}

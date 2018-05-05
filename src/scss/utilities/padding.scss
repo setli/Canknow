@@ -1,0 +1,39 @@
+@import "./../variables";
+.padding-harf{
+  padding: $space-harf !important;
+}
+.padding-1,
+.padding-base {
+  padding: $space !important;
+}
+.padding-2{
+  padding: $space2 !important;
+}
+.padding-3 {
+  padding: $space3 !important;
+}
+.padding-4 {
+  padding: $space4 !important;
+}
+.no-padding {
+  padding: 0 !important;
+}
+.no-padding-left {
+  padding-left: 0 !important;
+}
+.no-padding-right {
+  padding-right: 0 !important;
+}
+.no-padding-top {
+  padding-top: 0 !important;
+}
+.no-padding-bottom {
+  padding-bottom: 0 !important;
+}
+.content-padding{
+  padding: $content-padding;
+}
+
+.component-span{
+  margin: $component-span;
+}

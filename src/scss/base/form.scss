@@ -1,0 +1,215 @@
+.form-group{
+  margin-bottom:$component-span;
+  .input-illustrate{
+    display: inline-block;
+    height:$component-size;
+    line-height: $component-size;
+    font-size: $font-size;
+  }
+
+  &.form-group-required{
+    .form-group-key{
+      &:before{
+        display: inline-block;
+        margin-right: $text-span;
+        content: "*";
+        font-family: SimSun;
+        font-size: $font-size;
+        color: $error-color;
+      }
+    }
+  }
+  .form-group-key {
+    display: block;
+    margin-bottom:$component-span;
+    height: $component-size;
+    line-height: $component-size;
+    white-space:nowrap;
+    overflow:hidden;
+    text-overflow:ellipsis;
+    font-weight:normal;
+    font-size: $font-size;
+    color:$title-color;
+    @include user-select-none;
+  }
+
+  .form-group-body {
+    position: relative;
+    line-height: $component-size;
+    +.form-group-body{
+      margin-top:$component-span;
+    }
+    .form-group{
+      margin-bottom:$component-span;
+    }
+    .form-group-help{
+      color: $sub-color;
+      margin-top: $component-span;
+    }
+    .form-group-block{
+      position: relative;
+      textarea{
+        display: block;
+        width: 100%;
+      }
+      .form-group-error-tip{
+        padding: 0 $text-padding;
+        color:$error-color;
+        border: $border-width solid $error-color;
+        border-radius: $space;
+        transition:height $transition-time;
+        position: absolute;
+        top: 50%;
+        transform: translateY(-50%);
+        right: $content-padding;
+        display: inline-block;
+        font-family: icon-font;
+        @include text-ellipsis;
+        user-select: none;
+        max-width: 50%;
+        line-height: 1.5;
+        &:before{
+          display: inline-block;
+          @extend .icon-cry;
+          margin-right: $text-span;
+        }
+      }
+    }
+  }
+}
+
+.form-label-right {
+  .form-group-key{
+    text-align: right;
+  }
+}
+
+.inline-form {
+  .form-group{
+    display: inline-block;
+    @include clearfix;
+    margin-right: $component-span;
+    .form-group-key{
+      float: left;
+    }
+  }
+}
+
+.vertical-form{
+  .form-group{
+    margin-bottom:$component-span;
+    .form-group-key {
+      margin-bottom: 0;
+      font-weight:bold;
+    }
+  }
+}
+
+.horizontal-form{
+  .form-group{
+    @include clearfix;
+    .form-group-key{
+      color:$sub-color;
+      padding:0 $content-padding;
+      margin:0;
+      float: left;
+    }
+  }
+}
+
+.validate-message{
+  font-size: $font-size;
+  &ul{
+    list-style-type:none;
+    padding-left:0;
+    li{
+      line-height: $line-height-base;
+    }
+  }
+}
+
+.form-group-block{
+  &>.validate-message{
+    padding: $text-padding;
+    color: #fff;
+    font-size: $font-size;
+    line-height: 1;
+    margin-top: $component-span;
+    background:$error-color;
+    border-radius: $component-size-small;
+    position: relative;
+    font-weight: bold;
+  }
+}
+
+.validation-summary-errors{
+  background-color: $background-color;
+  padding: $content-padding;
+  ul{
+    padding-left:0;
+    li{
+      list-style-type:none;
+      font-size:$font-size;
+    }
+  }
+}
+
+.mobile-form{
+  .form-group{
+    margin:0;
+    padding: $text-padding $content-padding;
+    border-bottom: $border-width solid $border-color;
+    @include horizional-flex;
+    background-color:#fff;
+    .form-group-key{
+      display:block;
+      margin-bottom:0;
+      padding:0;
+      width:$font-size*10;
+    }
+    .form-group-body{
+      @include flex-adapter;
+      .form-group-block{
+        overflow: visible;
+        input[type='text'],
+        input[type='password'],
+        input[type='tel'],
+        input[type='number'],
+        input[type='email'],
+        input[type='url'],
+        input[type='range'],
+        input[type='search'],
+        input[type='color'],
+        select,
+        textarea,
+        .select,
+        .select-selection,
+        .static-text{
+          border-color:transparent;
+        }
+      }
+    }
+  }
+  .validate-message{
+    &:last-child{
+      margin:0;
+    }
+  }
+}
+
+
+fieldset{
+  border:none;
+  legend{
+    display: block;
+    width: 100%;
+    font-size: 1.6rem;
+    padding: $text-padding 0;
+  }
+}
+
+h3.form-section {
+  margin-top: $component-span;
+  font-weight:100;
+  color:$title-color;
+}

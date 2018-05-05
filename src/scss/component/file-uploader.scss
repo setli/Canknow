@@ -1,0 +1,116 @@
+.file-uploader-group>.file-uploader{
+  display:inline-block;
+  width:calc(25% - 1rem);
+  margin-left:0.5rem;
+  margin-right:0.5rem;
+  &:first-child{
+    width:calc(25% - 0.5rem);
+    margin-right:0.5rem;
+  }
+  &:last-child{
+    width:calc(25% - 0.5rem);
+    margin-left:0.5rem;
+  }
+}
+
+.file-uploader{
+  position:relative;
+  display:inline-block;
+  &.block{
+    display: block;
+  }
+  &.radius{
+    border-radius: $border-radius;
+    overflow: hidden;
+  }
+  .picture-box{
+    position:relative;
+    .picture-box-img{
+      border:$border-width solid $border-color;
+      background-color: $background-color;
+      text-align: center;
+    }
+    .picture-uploader-remove-button{
+      position: absolute;
+      right: 0;
+      top:0;
+      cursor: pointer;
+      user-select: none;
+    }
+  }
+  .file-uploader-box{
+    position: relative;
+    .file-select-block{
+      display:block;
+      position:relative;
+      color: #ababab;
+      white-space:nowrap;
+      text-overflow:ellipsis;
+      overflow:hidden;
+      border: $border-width dashed $border-color;
+      border-radius:$border-radius;
+      padding:$content-padding;
+      text-align:center;
+      &:hover{
+        border-color:$primary-color;
+      }
+      .file-icon{
+        display:block;
+        width: $component-size-larger;
+        height: $component-size-larger;
+        font-size:$component-size-larger;
+        line-height: 1;
+        color:$icon-color;
+        margin:0 auto $component-span auto;
+      }
+      .upload-helper{
+        color:rgba(0, 0, 0, 0.65);
+        font-size:$font-size;
+      }
+      .file-path{
+        color:rgba(0, 0, 0, 0.43);
+        font-size:$font-size;
+        margin-bottom:0;
+        @include text-ellipsis;
+      }
+    }
+    input[type=file]{
+      opacity: 0;
+      display: block;
+      width: 100%;
+      height: 100%;
+      position: absolute;
+      top: 0;
+      left: 0;
+      cursor:pointer;
+    }
+  }
+  .progress{
+    margin-top:$component-span;
+  }
+}
+
+.upload-list{
+  @include list-unstyled;
+  .upload-list-file{
+    @include horizional-flex-align-center;
+    padding: 0 $content-padding;
+    background: $background-color;
+    border-bottom: $border-width solid $border-color;
+    .upload-list-file-info{
+      display: block;
+      @include flex-adapter;
+      .upload-list-file-icon{
+
+      }
+      .upload-list-file-name{
+
+      }
+    }
+    .upload-list-remove{
+      color:$error-color;
+      cursor: pointer;
+      user-select: none;
+    }
+  }
+}

@@ -1,0 +1,19 @@
+.image-with-text-button{
+  @extend .icon-with-text-button;
+  img{
+    width:$component-size - (2*$border-width);
+    height:$component-size - (2*$border-width);
+    display:inline-block;
+    vertical-align: middle;
+    margin-right:$icon-text-span;
+    border:$border-width solid transparent;
+    &.border{
+      border-color: $border-color;
+      margin-right:$icon-text-span;
+      font-size:1.5*$font-size -(2*$border-width);
+      & .circle{
+        border-radius:$component-size - (2*$border-width);
+      }
+    }
+  }
+}

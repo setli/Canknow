@@ -1,0 +1,29 @@
+.progress{
+  height:1.8rem;
+  position:relative;
+  background-color:#ccc;
+  .indicator{
+    position:absolute;
+    left:0;
+    top:0;
+    width:0;
+    height:100%;
+    background:#4cff00;
+    color:#fff;
+    font-size:$font-size;
+    text-align:center;
+    line-height:1.8rem;
+    .progress-value{
+      color:#fff;
+      font-size: $font-size
+    }
+  }
+}
+.progress-hide{
+  @include transform(rotateX(90deg));
+  @include transition(0.3s);
+  height: 0;
+  &.show{
+    @include transform(rotateX(0deg));
+  }
+}

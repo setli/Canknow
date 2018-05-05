@@ -1,0 +1,88 @@
+.rich-editor{
+  @include vertical-flex;
+  border: $border-width solid $border-color;
+  .rich-editor-toolbar{
+    padding:$text-span $content-padding;
+    border-bottom: $border-width solid rgba(0,0,0,0.05);
+    .toolbar-item{
+      display:inline-block;
+      vertical-align: middle;
+      margin-right:3px;
+      &.active{
+        &>.icon-button{
+          background-color:$background-color;
+          color: $title-color;
+        }
+      }
+      .net-picture-wrap{
+        img{
+          max-width: 100%;
+        }
+      }
+    }
+    .icon-button{
+      text-align: center;
+    }
+  }
+  .dropdown-wripper{
+    .text-button{
+      background:transparent;
+    }
+  }
+  .rich-editor-editor-wrap{
+    display:block;
+    @include flex-adapter;
+    background: #fff;
+    padding:$content-padding;
+    .rich-editor-editor{
+      outline: none;
+      overflow-y:scroll;
+      min-height: 300px;
+    }
+  }
+  pre{
+    background: $background-color;
+    padding:$content-padding;
+  }
+  .previewer{
+    display:block;
+    @include flex-adapter;
+    background: #fff;
+    outline: none;
+    padding:$content-padding;
+    overflow-y:scroll;
+  }
+  textarea.code{
+    display:block;
+    @include flex-adapter;
+    background: #fff;
+    outline: none;
+    padding:$content-padding;
+    overflow-y:scroll;
+  }
+}
+.image-setting-bar{
+  position:absolute;
+  left:0;
+  top:0;
+  background:rgba(255, 255, 255, 0.7);
+  padding: 3px;
+  &>*{
+    margin-right:6px;
+    @include user-select-none;
+  }
+}
+
+.color-picker{
+  width:256px;
+  .color-picker-martix{
+    .color-cell{
+      float: left;
+      width:32px;
+      height:32px;
+      border:none;
+      outline:none;
+      cursor:pointer;
+    }
+  }
+}

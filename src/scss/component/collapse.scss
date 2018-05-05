@@ -1,0 +1,61 @@
+.collapse{
+}
+.collapse-transition {
+  transition: $transition-time height ease-in-out, $transition-time padding-top ease-in-out, $transition-time padding-bottom ease-in-out;
+}
+.collapse-panel{
+}
+
+.panel{
+  .panel-header{
+    font-size: $font-size;
+    padding: $content-padding;
+    background-color: $background-color;
+    cursor: pointer;
+    line-height: 1;
+  }
+  &:not(:last-child){
+    .panel-header{
+      border-bottom: $border-width solid $border-color;
+    }
+  }
+  .panel-content{
+    overflow: hidden;
+    font-size: $font-size;
+    padding: $content-padding;
+  }
+}
+
+.collapsing {
+  position: relative;
+  overflow: hidden;
+  transition-property:all;
+  transition-duration: 0.3s;
+  transition-timing-function: ease;
+  &:not(.width){
+    height: 0;
+  }
+  &.width{
+    width: 0;
+  }
+}
+.collapsed{
+
+}
+
+.text-button{
+  position: relative;
+  &.collapse-handler{
+    &:after{
+      margin-left: $component-span;
+      font-family:"icon-font" !important;
+      content: '\e62a';
+      display:inline-block;
+    }
+    &.collapsed{
+      &:after{
+        content: '\e62b';
+      }
+    }
+  }
+}

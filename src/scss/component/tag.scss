@@ -1,0 +1,73 @@
+.tag {
+  display: inline-block;
+  position: relative;
+  height: $component-size;
+  line-height: $component-size - 2*$border-width;
+  vertical-align: baseline;
+  background-color: #fff;
+  border: $border-width solid $border-color;
+  padding:0 $content-padding;
+  transition: background 0.1s ease;
+  margin-left:$component-span;
+  cursor: pointer;
+  user-select: none;
+  &.ligth{
+    .tag-text{
+      color: $title-color;
+    }
+  }
+  &.dark{
+    .tag-text{
+      color:#fff;
+    }
+    .close-button{
+      color: #fff;
+    }
+  }
+  &.disabled {
+    .tag-dot{
+      background-color: $disabled-color;
+    }
+  }
+  .tag-dot {
+    width: $font-size;
+    height: $font-size;
+    line-height: $font-size;
+    line-height: $component-size - 2*$border-width;
+    border-radius: 100%;
+    background: $primary-color;
+    vertical-align: middle;
+    display: inline-block;
+    margin-right: $text-span;
+    user-select: none;
+  }
+  .tag-text {
+    display: inline-block;
+    color: rgba(0,0,0,0.6);
+    text-transform: none;
+    font-weight: bold;
+    white-space: nowrap;
+    vertical-align: middle;
+    user-select: none;
+  }
+  .close-button {
+    display: inline-block;
+    vertical-align: middle;
+    width: $component-size-small;
+    height: $component-size-small;
+    line-height: $component-size-small;
+    text-align: center;
+    margin-left: $text-span;
+    user-select: none;
+  }
+}
+
+.tag-list {
+  list-style-type: none;
+  padding: 0;
+  margin-bottom: 0;
+  .tag{
+    display: inline-block;
+    margin-right: $text-span;
+  }
+}

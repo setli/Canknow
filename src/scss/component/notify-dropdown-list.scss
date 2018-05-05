@@ -1,0 +1,23 @@
+.notify-dropdown-list{
+  li{
+    a{
+      @include horizional-flex-align-center;
+      .label{
+        margin-right:$component-span;
+      }
+      .notify-title{
+        display:block;
+        @include flex-adapter;
+        font-weight: bold;
+        overflow: hidden;
+        text-overflow: ellipsis;
+      }
+    }
+    .time{
+      font-size: $font-size;
+      font-style: italic;
+      text-align: right;
+      color:$sub-color;
+    }
+  }
+}

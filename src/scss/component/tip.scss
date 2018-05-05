@@ -1,0 +1,16 @@
+.tip {
+  position: fixed;
+  left: 50%;
+  z-index: $zindex-message;
+  padding: 0 $content-padding;
+  height: $component-size-smaller;
+  line-height: $component-size-smaller - 2*$border-width;
+  bottom:$component-span*2;
+  border: $border-width solid $title-color;
+  font-size: $font-size;
+  background: $title-color;
+  text-align: center;
+  color: #fff;
+  font-weight: bold;
+  border-radius: $border-radius;
+}

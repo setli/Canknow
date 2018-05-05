@@ -1,0 +1,31 @@
+.alert {
+  padding: $text-padding $content-padding;
+  margin-bottom: $component-span;
+  border: $border-width solid transparent;
+  font-size:$font-size;
+  position:relative;
+  color: $title-color;
+  border-radius: $block-border-radius;
+  &.success {
+    background: lighten($success-color, $alert-lighten);
+  }
+  &.info {
+    background: lighten($info-color, $alert-lighten);
+  }
+  &.warning {
+    background: lighten($warning-color, $alert-lighten);
+  }
+  &.danger {
+    background: lighten($error-color, $alert-lighten);
+  }
+  &.dismissible {
+    .button-close {
+      position: absolute;
+      top: 50%;
+      right: $content-padding;
+      margin-top:-$component-size-small/2;
+      opacity: 0.2;
+      color:#fff;
+    }
+  }
+}

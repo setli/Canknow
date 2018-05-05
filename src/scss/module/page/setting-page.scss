@@ -1,0 +1,14 @@
+.setting-page{
+  position:fixed;
+  top:0;
+  right:0;
+  height:100%;
+  z-index:$zindex-fixed;
+  background-color:#fff;
+  box-shadow: $shadow-base;
+  @include transform(translateX(100%));
+  @include transition(0.3s);
+  &.show{
+    @include transform(translateX(0));
+  }
+}

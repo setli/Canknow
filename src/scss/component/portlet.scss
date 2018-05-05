@@ -1,0 +1,37 @@
+.portlet {
+  margin-top: 0;
+  margin-bottom:$component-span;
+  padding: 0;
+  border:$border-width solid $border-color;
+  background-color: #fff;
+  .portlet-header {
+    border-bottom: $border-width solid $border-color;
+    padding:0 $content-padding;
+    margin-bottom: $component-span;
+    height: $component-size-large;
+    @include horizional-flex-align-center;
+    background-color: $background-color;
+    .portlet-icon{
+      display: block;
+      font-size: $font-size*1.5;
+      margin-right: $icon-text-span;
+      color: $sub-color;
+    }
+    .portlet-title {
+      display: block;
+      font-size: $font-size;
+      font-weight: 300;
+      @include flex-adapter;
+      color: $title-color;
+      .portlet-action-bar {
+        float: right;
+        display: inline-block;
+        padding: $component-span 0;
+      }
+    }
+  }
+  .portlet-body {
+    clear: both;
+    padding: $content-padding;
+  }
+}
